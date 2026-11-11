@@ -233,6 +233,48 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 .footer{width:100%;flex:0 0 340px!important;display:flex;flex-direction:column;align-items:flex-start!important;justify-content:center!important;gap:18px!important}
 .footer-about{max-width:620px;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.footer-about strong{font:10px var(--mono);letter-spacing:.14em;color:var(--accent)}.footer-about p{font:13px/1.8 var(--sans);color:var(--muted);margin:8px 0 0}
 @media(max-width:700px){.page>.hero h1{font-size:clamp(48px,13vw,66px)}.page .download-card{min-height:125px}.page .project-card{min-height:190px}.footer{flex-basis:300px!important}}
+</style>
+<style id="balanced-screen-fit-and-blue-backdrop">
+/* Soft blue atmosphere behind the portfolio, with the existing panels kept readable. */
+html[data-mode="dark"] body{background:linear-gradient(115deg,#111827 0%,#172338 48%,#171a2a 100%)!important;position:relative}
+html[data-mode="dark"] body:before{content:"";position:fixed;inset:-18%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 18% 28%,#638acb55 0,transparent 38%),radial-gradient(ellipse at 72% 72%,#819bd044 0,transparent 34%),radial-gradient(ellipse at 48% 5%,#9bb8e52a 0,transparent 35%);filter:blur(48px);transform:translateZ(0)}
+html[data-mode="light"] body:before{display:none}
+.page{gap:clamp(26px,3vw,46px);padding-inline:clamp(24px,3vw,48px)}
+.page>.hero{flex-basis:clamp(760px,82vw,1080px);grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);grid-template-rows:auto auto;align-content:center;gap:clamp(20px,2.2vw,34px);padding:88px 0 32px}
+.page>.section,.page>.projects-wrap{flex-basis:clamp(740px,78vw,1020px);padding:94px 0 32px;justify-content:center;gap:clamp(14px,2vh,22px)}
+.page>.section#downloads,.page>.section#updates,.page>.section#links,.page>.section#building{flex-basis:clamp(740px,78vw,1020px)}
+.page>.projects-wrap{flex-basis:clamp(760px,80vw,1040px)}
+.page>.section .section-head,.page>.projects-wrap .section-head{margin-bottom:clamp(16px,2.4vh,26px);align-items:flex-end}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,16px)}
+.page .download-card,.page .project-card,.page .social-card,.page .about-card{height:auto!important;min-height:0}
+.page .download-card{min-height:clamp(142px,18vh,190px);padding:clamp(15px,1.5vw,21px)}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.page .project-card{min-height:clamp(190px,24vh,245px);padding:clamp(16px,1.6vw,22px)}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,15px)}
+.page .social-card{min-height:clamp(112px,15vh,150px);padding:clamp(14px,1.4vw,19px)}
+.page>.section#building .build-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page>.section#building .about-card{min-height:130px}
+.page>.section#appearance{flex-basis:clamp(620px,65vw,820px)}
+.page>.footer{flex:0 0 300px!important;width:300px;padding:94px 0 30px}
+@media(max-height:760px) and (min-width:701px){
+ .page>.hero,.page>.section,.page>.projects-wrap{padding-top:74px;padding-bottom:20px}
+ .page .download-card{min-height:112px}.page .project-card{min-height:150px}.page .social-card{min-height:82px}
+ .page>.section#building .about-card{min-height:112px}
+}
+@media(max-width:900px){
+ .page>.hero{grid-template-columns:1fr;grid-template-rows:auto;flex-basis:84vw}
+ .page>.section,.page>.projects-wrap{flex-basis:84vw}
+ .page .download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ .page>.hero,.page>.section,.page>.projects-wrap{flex-basis:88vw;padding:82px 0 24px}
+ .page .download-card{min-height:118px}
+ .page .project-card{min-height:165px}
+ .page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page>.footer{flex-basis:250px!important;width:250px}
+}
+@media(max-width:430px){.page .download-grid,.page .project-grid,.page .about-grid{grid-template-columns:1fr}.page .download-card{min-height:96px}.page .project-card{min-height:140px}}
 </style></head>
 <body>
 <aside class="sidebar">
