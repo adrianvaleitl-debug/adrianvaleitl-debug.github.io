@@ -464,3 +464,27 @@ body>footer.footer a{color:var(--text)!important;text-decoration:none}
 (()=>{const f=document.querySelector('.page>footer.footer');if(f)document.body.append(f)})();
 </script>
 </body></html>
+
+<style id="adrian-centered-footer-and-readable-type">
+/* Centre the fixed footer within the content area to the right of the sidebar. */
+body>footer.footer{
+ left:calc(220px + (100vw - 220px - min(1160px,100vw - 244px))/2)!important;
+ right:auto!important;
+ width:min(1160px,calc(100vw - 244px))!important;
+ transform:none!important;
+ justify-content:center!important;
+ gap:clamp(18px,3vw,42px)!important;
+ text-align:center!important;
+}
+body>footer.footer:before{flex:0 0 auto}
+body>footer.footer>span{flex:0 1 auto;text-align:center}
+body{font-size:15px}
+.page .lead{font-size:clamp(14px,1.12vw,16px)!important}
+.page .section-note{font-size:clamp(13px,1vw,15px)!important}
+.page .download-card strong,.page .social-card strong{font-size:clamp(13px,1.05vw,15px)!important}
+.page .download-card small,.page .social-card small{font-size:clamp(11px,.9vw,13px)!important}
+.page .project-card p,.page .about-card p,.page .release p{font-size:clamp(12px,.95vw,14px)!important}
+@media(max-width:700px){
+ body>footer.footer{left:8px!important;right:8px!important;width:auto!important;transform:none!important;justify-content:center!important;gap:12px!important}
+}
+</style>
