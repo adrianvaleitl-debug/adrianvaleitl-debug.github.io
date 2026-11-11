@@ -34,17 +34,163 @@ html[data-mode="light"]{--bg:#f5f3f0;--side:#eeece8;--panel:#fffdfa;--panel2:#f1
 @media(max-width:1100px){.sidebar{width:220px}.workspace{margin-left:220px}.page{padding-inline:28px}.topline{padding-inline:28px}.projects-wrap{margin-inline:-28px;padding-inline:28px}.hero{grid-template-columns:1fr}.hero-card{max-width:600px}.download-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.sidebar{position:relative;width:auto;height:auto;padding:13px 15px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0;border:0}.sidebar .navlabel,.sidebar .side-bottom{display:none}.nav{display:flex;overflow-x:auto;margin-top:12px;gap:4px}.nav a{white-space:nowrap;padding:8px 10px;font-size:10px}.workspace{margin:0}.topline{height:48px;padding-inline:17px}.page{padding-inline:17px}.projects-wrap{margin-inline:-17px;padding-inline:17px}.hero{padding:43px 0 35px;gap:20px}.hero-card{padding:17px}.section{padding:38px 0 45px}.section-head{align-items:start;flex-direction:column;gap:5px}.download-grid,.project-grid,.about-grid{grid-template-columns:1fr}.social-grid{grid-template-columns:repeat(2,1fr)}.release{grid-template-columns:1fr auto;gap:7px}.release a{grid-column:2;grid-row:1/3}.theme-panel{align-items:flex-start;flex-direction:column}.footer{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
-
-/* Stable vertical layout: keep useful content visible at both ends of the viewport. */
-@media(min-width:1000px){
- .workspace{min-height:100svh}
- .page{padding-bottom:56px}
- .hero{min-height:calc(100svh - 67px);padding-top:clamp(48px,7vh,76px);padding-bottom:clamp(42px,7vh,76px)}
- .section{scroll-margin-top:24px}
- .projects-wrap{padding-top:clamp(42px,6vh,58px);padding-bottom:clamp(48px,7vh,68px)}
- .footer{padding-top:28px;padding-bottom:28px}
+</style>
+<style id="horizontal-page-navigation">
+/* Portfolio is a horizontal, full-panel experience. Each major area is one snap-to panel. */
+html,body{height:100%;overflow:hidden}
+.workspace{height:100vh;min-height:0;display:flex;flex-direction:column}
+.topline{flex:0 0 67px}
+.page{display:flex;flex:1 1 auto;min-height:0;width:100%;max-width:none;margin:0;padding:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--accent) var(--panel2);-webkit-overflow-scrolling:touch}
+.page::-webkit-scrollbar{height:10px}.page::-webkit-scrollbar-track{background:var(--panel2)}.page::-webkit-scrollbar-thumb{background:var(--accent);border:2px solid var(--panel2);border-radius:99px}
+.page>.hero,.page>.section,.page>.projects-wrap,.page>.footer{flex:0 0 100%;width:100%;min-width:0;max-width:none;min-height:100%;max-height:100%;height:100%;margin:0;overflow-x:hidden;overflow-y:auto;scroll-snap-align:start;scroll-snap-stop:always;overscroll-behavior:contain}
+.page>.hero,.page>.section{padding:42px clamp(24px,4vw,58px)}
+.page>.projects-wrap{padding:42px clamp(24px,4vw,58px);border-inline:0}
+.page>.footer{padding:28px clamp(24px,4vw,58px);display:flex;align-items:flex-end;justify-content:space-between}
+.page>.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.page>.section>.section-head,.page>.projects-wrap>.section-head{margin-bottom:24px}
+.page .download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.page .about-grid{grid-template-columns:1fr 1fr}
+.page .theme-panel{max-width:760px}
+.page>.footer{flex-wrap:wrap}
+@media(max-width:1100px){.page>.hero{grid-template-columns:1fr}.page .download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .workspace{height:auto;min-height:calc(100vh - 130px)}
+ .topline{flex-basis:48px}
+ .page{height:calc(100vh - 178px);flex:0 0 calc(100vh - 178px)}
+ .page>.hero,.page>.section,.page>.projects-wrap,.page>.footer{flex-basis:100%;min-height:100%;height:100%;padding:30px 18px}
+ .page>.hero{display:flex;flex-direction:column;align-items:stretch;justify-content:center}
+ .page .download-grid,.page .project-grid,.page .about-grid{grid-template-columns:1fr}
+ .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page>.footer{align-items:flex-start;justify-content:flex-end;flex-direction:column}
 }
-</head>
+@media(prefers-reduced-motion:reduce){.page{scroll-behavior:auto}}
+</style>
+
+<style id="continuous-landscape-hub">
+/* A single continuous horizontal workspace, not a row of slide-like pages. */
+html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
+.workspace{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.topline{flex:0 0 60px;height:60px}
+.page{
+ height:calc(100dvh - 60px);flex:1 1 auto;min-height:0;width:100%;max-width:none;margin:0;
+ display:flex;align-items:stretch;gap:clamp(30px,4vw,62px);
+ padding:0 clamp(26px,4vw,60px) 15px;
+ overflow-x:auto;overflow-y:hidden;scroll-snap-type:none;scroll-behavior:auto;
+ overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;
+}
+.page::-webkit-scrollbar{height:7px}.page::-webkit-scrollbar-thumb{background:var(--accent);border-radius:99px}
+.page>.hero,.page>.section,.page>.projects-wrap,.page>.footer{
+ flex:0 0 clamp(650px,72vw,940px);width:auto;min-width:0;max-width:none;
+ height:100%;min-height:0;max-height:none;margin:0;padding:clamp(86px,11vh,112px) 0 35px;
+ overflow:visible;scroll-snap-align:none;scroll-snap-stop:normal;
+ display:flex;flex-direction:column;justify-content:center;align-self:stretch;
+ border:0!important;background:transparent;
+}
+.page>.hero{flex-basis:clamp(700px,78vw,1020px);display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(22px,3vw,42px);align-items:center;padding-top:70px}
+.page>.hero h1{font-size:clamp(48px,5.3vw,76px);margin:12px 0 14px}
+.page>.hero .lead{font-size:12px;line-height:1.75;max-width:520px}
+.page>.hero-card{padding:clamp(16px,2vw,22px)}
+.page>.section{border-top:0;padding-top:86px;padding-bottom:35px}
+.page>.section:before{display:none!important}
+.page>.section .section-head,.page>.projects-wrap .section-head{margin-bottom:17px;align-items:end}
+.page>.section .section-head h2,.page>.projects-wrap .section-head h2{font-size:clamp(27px,3vw,39px)}
+.page .section-note{font-size:10px;max-width:300px}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.page .download-card{min-height:130px;padding:13px}
+.page .download-card .mini-icon{width:30px;height:30px;margin-bottom:9px}
+.page .download-card strong{font-size:11px}
+.page .download-card small{font-size:9px}
+.page>.projects-wrap{flex-basis:clamp(700px,77vw,1010px);padding:86px 0 35px;background:transparent;border:0}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.page .project-card{min-height:190px;padding:15px}
+.page .project-card h3{font-size:17px;margin:10px 0 3px}
+.page .project-card p{font-size:10px;line-height:1.5}
+.page .project-links{gap:5px;padding-top:10px}
+.page .project-links a{font-size:8px;padding:6px 7px}
+.page .release-list{gap:7px}
+.page .release{padding:10px 13px;gap:10px}
+.page .release strong{font-size:10px}
+.page .release p{font-size:9px}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.page .social-card{min-height:100px;padding:13px}
+.page .social-card strong{font-size:11px}
+.page .social-card small{font-size:9px}
+.page .about-grid{grid-template-columns:1fr 1fr;gap:10px}
+.page .about-card{padding:17px}
+.page .about-card h3{font-size:18px}
+.page .about-card p{font-size:10px;line-height:1.7;margin:7px 0}
+.page .values{gap:6px;margin-top:11px}
+.page .value{padding:8px}
+.page .value b{font-size:9px}
+.page .value small{font-size:8px}
+.page>.section#appearance{flex-basis:clamp(620px,65vw,820px)}
+.page #appearance .theme-panel{margin:0;max-width:none;align-items:flex-start;flex-direction:column;gap:14px}
+.page>.footer{flex:0 0 280px;width:280px;align-items:flex-start;justify-content:center;gap:13px;padding-top:85px;padding-bottom:35px;font-size:9px}
+.page>.footer:before{content:"ADRIAN VALE · INDEPENDENTLY BUILT";font:9px var(--mono);letter-spacing:.12em;color:var(--accent)}
+.sidebar{z-index:30}
+@media(max-height:760px) and (min-width:701px){
+ .page>.hero,.page>.section,.page>.projects-wrap{padding-top:76px;padding-bottom:22px}
+ .page>.hero h1{font-size:clamp(43px,4.7vw,65px)}
+ .page .project-card{min-height:165px;padding:12px}
+ .page .download-card{min-height:112px;padding:11px}
+ .page .social-card{min-height:86px;padding:10px}
+}
+@media(max-width:700px){
+ html,body{overflow:hidden!important}
+ .workspace{height:calc(100dvh - 116px);min-height:0}
+ .topline{flex-basis:45px;height:45px;padding-inline:15px}
+ .page{height:calc(100dvh - 161px);flex:1 1 auto;gap:25px;padding:0 17px 12px}
+ .page>.hero,.page>.section,.page>.projects-wrap,.page>.footer{
+  flex-basis:86vw;width:86vw;height:100%;min-height:0;padding:78px 0 22px;overflow:visible
+ }
+ .page>.hero{flex-basis:90vw;display:flex;justify-content:center;gap:15px}
+ .page>.hero h1{font-size:clamp(43px,12vw,62px)}
+ .page .download-grid,.page .project-grid,.page .about-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page .download-card{min-height:115px}
+ .page .project-card{min-height:180px}
+ .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page>.projects-wrap{flex-basis:90vw}
+ .page>.section#appearance{flex-basis:84vw}
+ .page>.footer{flex-basis:240px;width:240px}
+ .sidebar{padding:10px 13px}
+}
+@media(max-width:430px){
+ .page .download-grid,.page .project-grid,.page .about-grid{grid-template-columns:1fr}
+ .page .download-card{min-height:95px}
+ .page .project-card{min-height:150px}
+ .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+<style id="portfolio-fuller-landscape-layout">
+.page{gap:clamp(28px,3.8vw,56px);padding-inline:clamp(22px,3.5vw,54px)}
+.page>.hero{flex-basis:clamp(820px,86vw,1160px);gap:clamp(20px,2.5vw,36px)}
+.page>.section,.page>.projects-wrap{flex-basis:clamp(760px,80vw,1080px);padding-top:82px;padding-bottom:28px}
+.page>.section#downloads{flex-basis:clamp(800px,84vw,1120px)}
+.page>.projects-wrap{flex-basis:clamp(820px,86vw,1160px)}
+.page>.section#updates{flex-basis:clamp(760px,78vw,1040px)}
+.page>.section#links,.page>.section#about{flex-basis:clamp(780px,82vw,1100px)}
+.page>.section#building{flex-basis:clamp(820px,86vw,1160px)}
+.page>.section#appearance{flex-basis:clamp(700px,72vw,940px)}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.page .download-card{min-height:145px;padding:15px}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.page .project-card{min-height:205px;padding:17px}
+.page .release-list{gap:9px}.page .release{padding:13px 15px}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.page .social-card{min-height:116px;padding:15px}
+.page .about-grid{gap:11px}.page .about-card{padding:18px}
+.page .about-card h3{font-size:17px;margin:0 0 7px}
+.page .about-card p{font-size:11px;line-height:1.6}
+.page>.section#building .build-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.page>.section#building .about-card{min-height:150px;padding:18px}
+.page .section-head{margin-bottom:14px}
+.page .section-head h2{font-size:clamp(28px,2.8vw,39px)}
+.page .section-note{font-size:11px;line-height:1.55}
+@media(max-height:760px) and (min-width:701px){.page>.hero,.page>.section,.page>.projects-wrap{padding-top:70px;padding-bottom:20px}.page .download-card{min-height:120px;padding:12px}.page .project-card{min-height:165px;padding:13px}.page .social-card{min-height:90px;padding:11px}.page>.section#building .about-card{min-height:125px;padding:14px}}
+@media(max-width:700px){.page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head>
 <body>
 <aside class="sidebar">
 <a class="brand" href="#home"><span class="brandmark">AV</span><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
@@ -56,7 +202,7 @@ html[data-mode="light"]{--bg:#f5f3f0;--side:#eeece8;--panel:#fffdfa;--panel2:#f1
 <a href="#updates"><span class="navicon">↻</span>Updates</a>
 <a href="#links"><span class="navicon">↗</span>All links</a>
 <a href="#about"><span class="navicon">◉</span>About me</a>
-<a href="#appearance"><span class="navicon">◐</span>Appearance</a>
+<a href="#building"><span class="navicon">✦</span>What I build</a><a href="#appearance"><span class="navicon">◐</span>Appearance</a>
 </nav>
 <div class="side-bottom"><div class="side-card"><b>Something not working?</b><p>Open the relevant project on GitHub and report an issue.</p><a href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div><div class="side-foot">INDEPENDENTLY BUILT BY ADRIAN</div></div>
 </aside>
@@ -82,7 +228,13 @@ html[data-mode="light"]{--bg:#f5f3f0;--side:#eeece8;--panel:#fffdfa;--panel2:#f1
 <section class="section" id="about"><div class="section-head"><div><div class="section-index">05 / ABOUT</div><h2>Hey, I'm Adrian.</h2></div><p class="section-note">The person behind the projects.</p></div><div class="about-grid">
 <div class="about-card"><h3>Ideas into actual products.</h3><p>I'm an independent software maker from the UK. I enjoy coming up with useful ideas, building programs and websites, and improving them over time.</p><p>This site brings my work together so it's easy to find the right download, follow an update or explore a project.</p><div class="values"><div class="value"><b>Think</b><small>Start with useful ideas</small></div><div class="value"><b>Build</b><small>Turn them into products</small></div><div class="value"><b>Improve</b><small>Keep making things better</small></div><div class="value"><b>Share</b><small>Make everything easy to find</small></div></div></div>
 <div class="about-card"><h3>One place for everything.</h3><p>New public repositories are discovered automatically. Downloads and release versions are taken from GitHub, so this page can stay current as projects receive updates.</p><p>Each project links to its own website and source repository. For support, open an issue on the relevant GitHub project.</p><a class="btn" href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">BROWSE MY GITHUB ↗</a></div></div></section>
-<section class="section" id="appearance"><div class="section-head"><div><div class="section-index">06 / PERSONALISE</div><h2>Make it yours.</h2></div><p class="section-note">Choose a pastel accent and switch between light and dark appearance. Your choices are saved on this device.</p></div>
+<section class="section" id="building"><div class="section-head"><div><div class="section-index">06 / HOW I WORK</div><h2>Ideas, built properly.</h2></div><p class="section-note">A little more about the thinking behind the software, the details I care about and what I want each project to feel like.</p></div><div class="about-grid build-grid">
+<article class="about-card"><h3>Useful first.</h3><p>I look for everyday problems where a small, well-made tool can save time, remove friction or make something easier to understand.</p></article>
+<article class="about-card"><h3>Designed to feel clear.</h3><p>Simple navigation, readable layouts and sensible defaults matter just as much as the feature list.</p></article>
+<article class="about-card"><h3>Built to keep improving.</h3><p>Projects are developed in versions, with fixes and improvements shaped by real use rather than adding complexity for its own sake.</p></article>
+<article class="about-card"><h3>Independent projects.</h3><p>I handle the ideas, product direction, websites and development across my own small collection of software.</p></article>
+<article class="about-card"><h3>Easy to get started.</h3><p>Each project should have a clear home, a straightforward download route and a place to find updates or source code.</p></article>
+<article class="about-card"><h3>Room to experiment.</h3><p>Not every idea needs to become a huge platform. Small focused tools can still make a meaningful difference.</p></article></div><div class="section-meta"><span>Independent development</span><span>Practical software</span><span>Continuous improvement</span></div></section><section class="section" id="appearance"><div class="section-head"><div><div class="section-index">06 / PERSONALISE</div><h2>Make it yours.</h2></div><p class="section-note">Choose a pastel accent and switch between light and dark appearance. Your choices are saved on this device.</p></div>
 <div class="theme-panel"><div><strong>Accent colour</strong><small>Choose a colour that suits your workspace.</small></div><div class="swatches">
 <button class="swatch" data-accent-choice="dollar" aria-pressed="false"><i style="background:#e8c98f"></i>Amber</button>
 <button class="swatch" data-accent-choice="euro" aria-pressed="true"><i style="background:#9ebce9"></i>Azure</button>
@@ -114,4 +266,8 @@ function downloadCard(r,rel){const a=assets(rel),target=a.exe||a.zip;return '<a 
 function projectCard(r,rel){const a=assets(rel),links=[],s=site(r);if(a.exe)links.push('<a class="get" href="'+esc(a.exe.browser_download_url)+'" target="_blank" rel="noreferrer">WINDOWS SETUP ↓</a>');if(a.zip)links.push('<a class="get" href="'+esc(a.zip.browser_download_url)+'" target="_blank" rel="noreferrer">PORTABLE ZIP ↓</a>');if(s)links.push('<a href="'+esc(s)+'" target="_blank" rel="noreferrer">WEBSITE ↗</a>');links.push('<a href="'+esc(r.html_url)+'" target="_blank" rel="noreferrer">GITHUB ↗</a>');if(rel)links.push('<a href="'+esc(rel.html_url)+'" target="_blank" rel="noreferrer">RELEASE NOTES ↗</a>');return '<article class="project-card"><div class="project-top"><span class="project-mark">'+esc(pretty(r.name).slice(0,2).toUpperCase())+'</span><span class="tag">'+(rel?'LATEST '+esc(rel.tag_name):'PUBLIC REPOSITORY')+'</span></div><h3>'+esc(pretty(r.name))+'</h3><p>'+esc(r.description||'An independent project by Adrian Vale.')+'</p><div class="project-meta">'+(rel?'PUBLISHED '+new Date(rel.published_at||rel.created_at).toLocaleDateString():'SOURCE CODE & PROJECT LINKS')+'</div><div class="project-links">'+links.join('')+'</div></article>'}
 async function load(){const d=$('downloadsGrid'),p=$('projectsGrid'),u=$('releaseList');try{const repos=await json('https://api.github.com/users/'+OWNER+'/repos?type=owner&sort=updated&per_page=100');const list=repos.filter(r=>!r.fork&&!r.archived&&!EXCLUDED.has(r.name)&&r.visibility==='public');list.sort((a,b)=>{const ai=PINNED.indexOf(a.name.toLowerCase()),bi=PINNED.indexOf(b.name.toLowerCase());return (ai<0?999:ai)-(bi<0?999:bi)||new Date(b.pushed_at)-new Date(a.pushed_at)});if(!list.length)throw new Error('No public repositories found');const rels=await Promise.all(list.map(r=>latest(r.name)));d.innerHTML=list.map((r,i)=>downloadCard(r,rels[i])).join('');p.innerHTML=list.map((r,i)=>projectCard(r,rels[i])).join('');const recent=list.map((r,i)=>({r,rel:rels[i]})).filter(x=>x.rel).sort((a,b)=>new Date(b.rel.published_at||b.rel.created_at)-new Date(a.rel.published_at||a.rel.created_at)).slice(0,8);u.innerHTML=recent.length?recent.map(x=>'<div class="release"><div><strong>'+esc(pretty(x.r.name))+' — '+esc(x.rel.name||x.rel.tag_name)+'</strong><p>'+esc((x.rel.body||'Latest public release.').replace(/[#>*_]/g,' ').slice(0,130))+'</p></div><span class="tag">'+esc(x.rel.tag_name)+'</span><a href="'+esc(x.rel.html_url)+'" target="_blank" rel="noreferrer">VIEW RELEASE ↗</a></div>').join(''):'<div class="empty">No published releases yet.</div>'}catch(e){const m='GitHub data could not be loaded ('+esc(e.message)+'). Refresh the page to try again.';d.innerHTML='<div class="empty">'+m+'</div>';p.innerHTML='<div class="empty">'+m+'</div>';u.innerHTML='<div class="empty">'+m+'</div>'}}
 load();
-</script></body></html>
+</script>
+<script id="continuous-wheel-navigation">
+(()=>{const rail=document.getElementById('home');if(!rail)return;let target=rail.scrollLeft,raf=0,last=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const clamp=v=>Math.max(0,Math.min(rail.scrollWidth-rail.clientWidth,v));function tick(now){const dt=last?Math.min(32,now-last):16;last=now;const diff=target-rail.scrollLeft;const ease=reduced?1:1-Math.pow(.002,dt/16);if(Math.abs(diff)<.35){rail.scrollLeft=target;raf=0;last=0;return}rail.scrollLeft+=diff*ease;raf=requestAnimationFrame(tick)}function move(delta){target=clamp(target+delta);if(!raf)raf=requestAnimationFrame(tick)}rail.addEventListener('wheel',e=>{if(e.ctrlKey)return;let dy=e.deltaY,dx=e.deltaX;if(e.deltaMode===1){dy*=16;dx*=16}else if(e.deltaMode===2){dy*=rail.clientHeight;dx*=rail.clientWidth}const d=Math.abs(dy)>Math.abs(dx)?dy:dx;if(d){e.preventDefault();move(d)}},{passive:false});rail.addEventListener('scroll',()=>{if(!raf)target=rail.scrollLeft},{passive:true});document.querySelectorAll('.nav a[href^="#"],.quicklinks a[href^="#"],.hero-actions a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el&&rail.contains(el)){e.preventDefault();target=clamp(el.offsetLeft-rail.offsetLeft);if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(tick)}}));})();
+</script>
+</body></html>
