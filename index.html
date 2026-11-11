@@ -285,6 +285,13 @@ html[data-mode="light"] body:before{display:none}
 @media(max-width:800px){.other-projects .other-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.other-projects .other-project-grid{grid-template-columns:1fr}.other-projects .other-project-card{min-height:150px}}
 </style>
+<style id="portfolio-centred-chrome">
+/* Keep the top controls and fixed footer centred in the actual workspace beside the sidebar. */
+.topline{padding-left:clamp(20px,calc((100% - 1160px)/2),90px)!important;padding-right:clamp(20px,calc((100% - 1160px)/2),90px)!important}
+body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))/2)!important;width:min(1160px,calc(100vw - 276px))!important;right:auto!important;justify-content:center!important;align-items:center!important;text-align:center!important}
+body>footer.footer:before,body>footer.footer>span{white-space:nowrap}
+@media(max-width:700px){.topline{padding-inline:14px!important}body>footer.footer{left:8px!important;right:8px!important;width:auto!important}}
+</style>
 </head>
 <body>
 <aside class="sidebar">
