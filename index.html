@@ -190,7 +190,38 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 .page .section-note{font-size:11px;line-height:1.55}
 @media(max-height:760px) and (min-width:701px){.page>.hero,.page>.section,.page>.projects-wrap{padding-top:70px;padding-bottom:20px}.page .download-card{min-height:120px;padding:12px}.page .project-card{min-height:165px;padding:13px}.page .social-card{min-height:90px;padding:11px}.page>.section#building .about-card{min-height:125px;padding:14px}}
 @media(max-width:700px){.page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-</style></head>
+</style>
+<style id="adrian-top-navigation-and-filled-canvas">
+/* Move the portfolio navigation into a full-width top bar while preserving the continuous horizontal canvas. */
+.sidebar{position:fixed;inset:0 0 auto;width:100%;height:76px;min-height:76px;padding:9px clamp(18px,3vw,44px);display:flex;flex-direction:row;align-items:center;gap:clamp(12px,2vw,28px);border-right:0;border-bottom:1px solid var(--line);overflow:hidden}
+.brand{flex:0 0 auto;padding:0 20px 0 0;border:0;white-space:nowrap}
+.brandmark{height:38px;width:38px}
+.navlabel,.side-bottom{display:none!important}
+.nav{display:flex;flex:1 1 auto;align-items:center;justify-content:center;gap:5px;min-width:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;padding:9px 11px;white-space:nowrap;font-size:11px}
+.workspace{margin:76px 0 0;height:calc(100dvh - 76px);min-height:0}
+.topline{flex:0 0 48px;height:48px;padding-inline:clamp(18px,3vw,44px)}
+.page{height:calc(100dvh - 124px);padding-top:10px;padding-bottom:18px;align-items:stretch}
+.page>.hero,.page>.section,.page>.projects-wrap{justify-content:space-evenly;padding-top:35px;padding-bottom:32px}
+.page>.hero{align-content:center}
+.page>.section .section-head{margin-bottom:clamp(20px,3vh,34px)}
+.page .download-grid,.page .project-grid,.page .social-grid,.page .about-grid,.page>.section#building .build-grid{align-content:stretch}
+.page .download-card,.page .project-card,.page .social-card,.page .about-card{height:100%;min-height:0}
+.page>.section#appearance .theme-panel{width:100%;min-height:150px;justify-content:space-around}
+.page>.footer{padding-top:35px;padding-bottom:35px}
+@media(max-width:900px){.sidebar{gap:10px;padding-inline:12px}.brand{padding-right:8px}.brand small{display:none}.nav{justify-content:flex-start}.nav a{padding:8px 9px;font-size:10px}}
+@media(max-width:700px){
+ .sidebar{position:fixed;inset:0 0 auto;height:96px;min-height:96px;padding:8px 12px;display:flex;flex-direction:column;align-items:stretch;gap:3px}
+ .brand{padding:0;min-height:36px}.brandmark{height:30px;width:30px}.brand strong{font-size:11px}
+ .nav{width:100%;justify-content:flex-start;margin:0;gap:3px}
+ .nav a{padding:7px 9px;font-size:9px}
+ .workspace{margin:96px 0 0;height:calc(100dvh - 96px)}
+ .topline{flex-basis:42px;height:42px}
+ .page{height:calc(100dvh - 138px);flex:1 1 auto}
+}
+</style>
+</head>
 <body>
 <aside class="sidebar">
 <a class="brand" href="#home"><span class="brandmark">AV</span><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
