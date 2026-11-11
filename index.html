@@ -381,4 +381,53 @@ load();
 <script id="adrian-add-hero-highlights">
 (()=>{const hero=document.querySelector('.page>.hero');if(!hero||hero.querySelector('.hub-highlights'))return;const panel=document.createElement('div');panel.className='hub-highlights';panel.innerHTML='<article><b>SOFTWARE & TOOLS</b><span>Practical apps built to make everyday work easier.</span></article><article><b>PROJECT UPDATES</b><span>Find releases, improvements and current downloads.</span></article><article><b>OPEN DEVELOPMENT</b><span>Explore the websites, source code and community links.</span></article>';hero.append(panel)})();
 </script>
+
+
+<style id="portfolio-final-proportion-footer-fix">
+.page{align-items:stretch;gap:clamp(28px,3vw,48px);padding-inline:clamp(24px,3.5vw,58px)}
+.page>.hero{flex:0 0 clamp(800px,82vw,1160px);width:auto;min-width:0;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);grid-template-rows:auto auto;align-content:center;gap:clamp(22px,2.6vw,38px);padding:82px 0 34px}
+.page>.section,.page>.projects-wrap{flex:0 0 clamp(740px,74vw,1060px);width:auto;min-width:0;padding:88px 0 34px;justify-content:center;gap:clamp(14px,2vh,22px)}
+.page>.section#downloads,.page>.section#updates,.page>.section#links,.page>.section#building{flex-basis:clamp(760px,76vw,1080px)}
+.page>.projects-wrap{flex-basis:clamp(780px,78vw,1100px)}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page .download-card{min-height:clamp(130px,17vh,176px);padding:clamp(15px,1.5vw,21px)}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.page .project-card{min-height:clamp(180px,22vh,230px);padding:clamp(16px,1.6vw,22px)}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page .social-card{min-height:clamp(108px,14vh,146px);padding:16px}
+.page>.section#building .build-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page>.section#building .about-card{min-height:126px;padding:16px}
+.page>.section .section-head,.page>.projects-wrap .section-head{margin-bottom:clamp(14px,2vh,22px)}
+.page .section-head h2,.page .projects-wrap .section-head h2{font-size:clamp(32px,3vw,44px)}
+.page .section-note{font-size:clamp(12px,1vw,14px);line-height:1.6;max-width:440px}
+.page>.footer{flex:0 0 100vw!important;width:100vw;min-width:100vw;height:100%;min-height:100%;padding:0 clamp(28px,7vw,110px);display:grid;grid-template-columns:minmax(260px,1fr) auto;grid-template-rows:auto auto;align-content:center;align-items:center;justify-content:stretch;gap:18px 42px;border-top:1px solid var(--line);font-size:12px}
+.page>.footer:before{content:"ADRIAN VALE · INDEPENDENTLY BUILT";grid-column:1/-1;font:10px var(--mono);letter-spacing:.14em;color:var(--accent)}
+.page>.footer .footer-about{max-width:620px;padding:0;border:0;border-radius:0;background:transparent}
+.page>.footer .footer-about p{max-width:560px}
+.page>.footer>span:last-child{justify-self:end}
+.top-appearance .swatch{display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;line-height:1!important;padding:0!important;box-sizing:border-box}
+.top-appearance .swatch i{display:block!important;width:12px;height:12px;margin:0!important;flex:0 0 12px}
+@media(max-width:900px){
+.page{gap:26px;padding-inline:22px}
+.page>.hero{flex-basis:86vw;grid-template-columns:1fr;grid-template-rows:auto auto}
+.page>.section,.page>.projects-wrap{flex-basis:86vw}
+.page .download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page>.footer{grid-template-columns:1fr;grid-template-rows:auto;align-content:center;gap:16px;padding:0 32px}
+.page>.footer>span:last-child{justify-self:start}
+}
+@media(max-width:700px){
+.page{gap:22px;padding-inline:16px}
+.page>.hero,.page>.section,.page>.projects-wrap{flex-basis:90vw;padding:78px 0 24px}
+.page>.hero{flex-basis:94vw}
+.page>.footer{flex-basis:90vw!important;width:90vw;min-width:90vw;padding:0 8px}
+.page .download-card{min-height:112px}
+.page .project-card{min-height:156px}
+}
+@media(max-width:430px){
+.page .download-grid,.page .project-grid,.page .about-grid,.page>.section#building .build-grid{grid-template-columns:1fr}
+.page .download-card{min-height:92px}
+}
+</style>
 </body></html>
