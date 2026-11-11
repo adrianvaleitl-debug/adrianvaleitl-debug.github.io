@@ -316,4 +316,17 @@ load();
 <script id="adrian-move-appearance-to-topbar">
 (()=>{const section=document.getElementById('appearance'),actions=document.querySelector('.top-actions'),swatches=section?.querySelector('.swatches');if(!actions||!swatches)return;const group=document.createElement('div');group.className='top-appearance';group.setAttribute('aria-label','Appearance accent colours');const label=document.createElement('span');label.className='top-appearance-label';label.textContent='APPEARANCE';group.append(label,swatches);actions.prepend(group);section.remove();document.querySelector('.nav a[href="#appearance"]')?.remove()})();
 </script>
+
+<style id="adrian-hero-highlights">
+.page>.hero{grid-template-rows:1fr auto;row-gap:clamp(16px,2.5vh,26px)}
+.page>.hero .hub-highlights{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.page>.hero .hub-highlights article{padding:12px 15px;border:1px solid var(--line);border-radius:12px;background:var(--panel);min-width:0}
+.page>.hero .hub-highlights b{display:block;font:10px var(--mono);letter-spacing:.08em;color:var(--accent);margin-bottom:3px}
+.page>.hero .hub-highlights span{display:block;color:var(--muted);font-size:10px;line-height:1.5}
+@media(max-width:700px){.page>.hero .hub-highlights{grid-template-columns:1fr 1fr}.page>.hero .hub-highlights article{padding:9px 11px}}
+@media(max-width:430px){.page>.hero .hub-highlights{grid-template-columns:1fr}}
+</style>
+<script id="adrian-add-hero-highlights">
+(()=>{const hero=document.querySelector('.page>.hero');if(!hero||hero.querySelector('.hub-highlights'))return;const panel=document.createElement('div');panel.className='hub-highlights';panel.innerHTML='<article><b>SOFTWARE & TOOLS</b><span>Practical apps built to make everyday work easier.</span></article><article><b>PROJECT UPDATES</b><span>Find releases, improvements and current downloads.</span></article><article><b>OPEN DEVELOPMENT</b><span>Explore the websites, source code and community links.</span></article>';hero.append(panel)})();
+</script>
 </body></html>
