@@ -301,4 +301,19 @@ load();
 <script id="continuous-wheel-navigation">
 (()=>{const rail=document.getElementById('home');if(!rail)return;let target=rail.scrollLeft,raf=0,last=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const clamp=v=>Math.max(0,Math.min(rail.scrollWidth-rail.clientWidth,v));function tick(now){const dt=last?Math.min(32,now-last):16;last=now;const diff=target-rail.scrollLeft;const ease=reduced?1:1-Math.pow(.002,dt/16);if(Math.abs(diff)<.35){rail.scrollLeft=target;raf=0;last=0;return}rail.scrollLeft+=diff*ease;raf=requestAnimationFrame(tick)}function move(delta){target=clamp(target+delta);if(!raf)raf=requestAnimationFrame(tick)}rail.addEventListener('wheel',e=>{if(e.ctrlKey)return;let dy=e.deltaY,dx=e.deltaX;if(e.deltaMode===1){dy*=16;dx*=16}else if(e.deltaMode===2){dy*=rail.clientHeight;dx*=rail.clientWidth}const d=Math.abs(dy)>Math.abs(dx)?dy:dx;if(d){e.preventDefault();move(d)}},{passive:false});rail.addEventListener('scroll',()=>{if(!raf)target=rail.scrollLeft},{passive:true});document.querySelectorAll('.nav a[href^="#"],.quicklinks a[href^="#"],.hero-actions a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el&&rail.contains(el)){e.preventDefault();target=clamp(el.offsetLeft-rail.offsetLeft);if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(tick)}}));})();
 </script>
+
+<style id="adrian-compact-topbar-appearance">
+.topline{height:58px;flex-basis:58px;gap:18px}.top-actions{display:flex;align-items:center;gap:13px;min-width:0}
+.top-appearance{display:flex;align-items:center;gap:9px;padding:5px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-width:calc(100vw - 340px)}
+.top-appearance-label{font:9px var(--mono);letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+.top-appearance .swatches{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}
+.top-appearance .swatch{width:25px;height:25px;padding:0;display:grid;place-items:center;font-size:0;flex:0 0 auto}
+.top-appearance .swatch i{width:12px;height:12px;margin:0;border-radius:50%}
+.top-appearance .swatch[aria-pressed=true]{outline:2px solid var(--accent);outline-offset:2px}
+.page{height:calc(100dvh - 134px)}.page>.section#appearance{display:none!important}
+@media(max-width:700px){.topline{height:auto;min-height:58px;flex-basis:auto;padding:7px 12px}.topline .crumb{display:none}.top-actions{width:100%;justify-content:space-between;gap:7px}.top-appearance{max-width:calc(100% - 105px);gap:6px;padding:4px 6px}.top-appearance-label{font-size:8px}.top-appearance .swatch{width:22px;height:22px}.page{height:calc(100dvh - 154px)}}
+</style>
+<script id="adrian-move-appearance-to-topbar">
+(()=>{const section=document.getElementById('appearance'),actions=document.querySelector('.top-actions'),swatches=section?.querySelector('.swatches');if(!actions||!swatches)return;const group=document.createElement('div');group.className='top-appearance';group.setAttribute('aria-label','Appearance accent colours');const label=document.createElement('span');label.className='top-appearance-label';label.textContent='APPEARANCE';group.append(label,swatches);actions.prepend(group);section.remove();document.querySelector('.nav a[href="#appearance"]')?.remove()})();
+</script>
 </body></html>
