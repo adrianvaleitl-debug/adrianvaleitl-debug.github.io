@@ -163,7 +163,34 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
  .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
-</head>
+<style id="portfolio-fuller-landscape-layout">
+.page{gap:clamp(28px,3.8vw,56px);padding-inline:clamp(22px,3.5vw,54px)}
+.page>.hero{flex-basis:clamp(820px,86vw,1160px);gap:clamp(20px,2.5vw,36px)}
+.page>.section,.page>.projects-wrap{flex-basis:clamp(760px,80vw,1080px);padding-top:82px;padding-bottom:28px}
+.page>.section#downloads{flex-basis:clamp(800px,84vw,1120px)}
+.page>.projects-wrap{flex-basis:clamp(820px,86vw,1160px)}
+.page>.section#updates{flex-basis:clamp(760px,78vw,1040px)}
+.page>.section#links,.page>.section#about{flex-basis:clamp(780px,82vw,1100px)}
+.page>.section#building{flex-basis:clamp(820px,86vw,1160px)}
+.page>.section#appearance{flex-basis:clamp(700px,72vw,940px)}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.page .download-card{min-height:145px;padding:15px}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.page .project-card{min-height:205px;padding:17px}
+.page .release-list{gap:9px}.page .release{padding:13px 15px}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.page .social-card{min-height:116px;padding:15px}
+.page .about-grid{gap:11px}.page .about-card{padding:18px}
+.page .about-card h3{font-size:17px;margin:0 0 7px}
+.page .about-card p{font-size:11px;line-height:1.6}
+.page>.section#building .build-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.page>.section#building .about-card{min-height:150px;padding:18px}
+.page .section-head{margin-bottom:14px}
+.page .section-head h2{font-size:clamp(28px,2.8vw,39px)}
+.page .section-note{font-size:11px;line-height:1.55}
+@media(max-height:760px) and (min-width:701px){.page>.hero,.page>.section,.page>.projects-wrap{padding-top:70px;padding-bottom:20px}.page .download-card{min-height:120px;padding:12px}.page .project-card{min-height:165px;padding:13px}.page .social-card{min-height:90px;padding:11px}.page>.section#building .about-card{min-height:125px;padding:14px}}
+@media(max-width:700px){.page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head>
 <body>
 <aside class="sidebar">
 <a class="brand" href="#home"><span class="brandmark">AV</span><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
@@ -175,7 +202,7 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 <a href="#updates"><span class="navicon">↻</span>Updates</a>
 <a href="#links"><span class="navicon">↗</span>All links</a>
 <a href="#about"><span class="navicon">◉</span>About me</a>
-<a href="#appearance"><span class="navicon">◐</span>Appearance</a>
+<a href="#building"><span class="navicon">✦</span>What I build</a><a href="#appearance"><span class="navicon">◐</span>Appearance</a>
 </nav>
 <div class="side-bottom"><div class="side-card"><b>Something not working?</b><p>Open the relevant project on GitHub and report an issue.</p><a href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div><div class="side-foot">INDEPENDENTLY BUILT BY ADRIAN</div></div>
 </aside>
@@ -201,7 +228,13 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 <section class="section" id="about"><div class="section-head"><div><div class="section-index">05 / ABOUT</div><h2>Hey, I'm Adrian.</h2></div><p class="section-note">The person behind the projects.</p></div><div class="about-grid">
 <div class="about-card"><h3>Ideas into actual products.</h3><p>I'm an independent software maker from the UK. I enjoy coming up with useful ideas, building programs and websites, and improving them over time.</p><p>This site brings my work together so it's easy to find the right download, follow an update or explore a project.</p><div class="values"><div class="value"><b>Think</b><small>Start with useful ideas</small></div><div class="value"><b>Build</b><small>Turn them into products</small></div><div class="value"><b>Improve</b><small>Keep making things better</small></div><div class="value"><b>Share</b><small>Make everything easy to find</small></div></div></div>
 <div class="about-card"><h3>One place for everything.</h3><p>New public repositories are discovered automatically. Downloads and release versions are taken from GitHub, so this page can stay current as projects receive updates.</p><p>Each project links to its own website and source repository. For support, open an issue on the relevant GitHub project.</p><a class="btn" href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">BROWSE MY GITHUB ↗</a></div></div></section>
-<section class="section" id="appearance"><div class="section-head"><div><div class="section-index">06 / PERSONALISE</div><h2>Make it yours.</h2></div><p class="section-note">Choose a pastel accent and switch between light and dark appearance. Your choices are saved on this device.</p></div>
+<section class="section" id="building"><div class="section-head"><div><div class="section-index">06 / HOW I WORK</div><h2>Ideas, built properly.</h2></div><p class="section-note">A little more about the thinking behind the software, the details I care about and what I want each project to feel like.</p></div><div class="about-grid build-grid">
+<article class="about-card"><h3>Useful first.</h3><p>I look for everyday problems where a small, well-made tool can save time, remove friction or make something easier to understand.</p></article>
+<article class="about-card"><h3>Designed to feel clear.</h3><p>Simple navigation, readable layouts and sensible defaults matter just as much as the feature list.</p></article>
+<article class="about-card"><h3>Built to keep improving.</h3><p>Projects are developed in versions, with fixes and improvements shaped by real use rather than adding complexity for its own sake.</p></article>
+<article class="about-card"><h3>Independent projects.</h3><p>I handle the ideas, product direction, websites and development across my own small collection of software.</p></article>
+<article class="about-card"><h3>Easy to get started.</h3><p>Each project should have a clear home, a straightforward download route and a place to find updates or source code.</p></article>
+<article class="about-card"><h3>Room to experiment.</h3><p>Not every idea needs to become a huge platform. Small focused tools can still make a meaningful difference.</p></article></div><div class="section-meta"><span>Independent development</span><span>Practical software</span><span>Continuous improvement</span></div></section><section class="section" id="appearance"><div class="section-head"><div><div class="section-index">06 / PERSONALISE</div><h2>Make it yours.</h2></div><p class="section-note">Choose a pastel accent and switch between light and dark appearance. Your choices are saved on this device.</p></div>
 <div class="theme-panel"><div><strong>Accent colour</strong><small>Choose a colour that suits your workspace.</small></div><div class="swatches">
 <button class="swatch" data-accent-choice="dollar" aria-pressed="false"><i style="background:#e8c98f"></i>Amber</button>
 <button class="swatch" data-accent-choice="euro" aria-pressed="true"><i style="background:#9ebce9"></i>Azure</button>
