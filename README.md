@@ -1,22 +1,23 @@
-# Adrian Vale — Personal Website
+# Adrian Vale — Projects & Websites
 
-The official personal website for Adrian Vale.
+The central directory for Adrian Vale's software projects. Use the links below to open each live project website or its GitHub repository.
 
-🌐 **Website:** https://adrianvaleitl-debug.github.io/
+## Project websites and source code
 
-This repository powers a GitHub Pages site that automatically discovers public projects owned by [@adrianvaleitl-debug](https://github.com/adrianvaleitl-debug), shows their latest GitHub releases and links to available installers, portable downloads and project websites.
+- **Market Insight**
+  - Website: https://adrianvaleitl-debug.github.io/market-insight/
+  - GitHub: https://github.com/adrianvaleitl-debug/market-insight
+- **SoloDesk**
+  - Website: https://adrianvaleitl-debug.github.io/SoloDesk/
+  - GitHub: https://github.com/adrianvaleitl-debug/SoloDesk
+- **DayFlow**
+  - Website: https://adrianvaleitl-debug.github.io/DayFlow/
+  - GitHub: https://github.com/adrianvaleitl-debug/DayFlow
 
-## Automatic project feed
+## Adrian Vale
 
-The website uses the public GitHub API in the visitor's browser. New public repositories appear automatically; latest release assets are looked up when the page loads. No manual project-card updates are needed.
-
-## Social links
-
-- GitHub: https://github.com/adrianvaleitl-debug
+- Personal website: https://adrianvaleitl-debug.github.io/
+- GitHub profile: https://github.com/adrianvaleitl-debug
 - TikTok: https://www.tiktok.com/@adrianvaleitl
 - YouTube: https://www.youtube.com/@Adrianvaleitl
 - Ko-fi: https://ko-fi.com/marketinsight
-
-## Deployment
-
-GitHub Actions deploys the root of this repository to GitHub Pages whenever a commit is pushed to `main`.
