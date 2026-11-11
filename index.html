@@ -55,7 +55,8 @@ function renderProject(repo,release){
  if(site)downloads.push('<a class="secondary" href="'+esc(site)+'" target="_blank" rel="noreferrer">WEBSITE ↗</a>');
  downloads.push('<a class="secondary" href="'+esc(repo.html_url)+'" target="_blank" rel="noreferrer">VIEW GITHUB SOURCE ↗</a>');
  const version=release?.tag_name?'<span class="release">'+esc(release.tag_name)+'</span>':'';
- const destination=site||repo.html_url;\n return '<article class="project" role="link" tabindex="0" data-destination="'+esc(destination)+'" aria-label="Open '+esc(title)+' website"><div class="project-top"><div class="project-icon">'+esc(title.slice(0,2).toUpperCase())+'</div><span class="tag">'+(release?'LATEST RELEASE':'GITHUB PROJECT')+'</span></div><h3>'+esc(title)+'</h3><p>'+esc(desc)+'</p><div class="project-foot">'+downloads.join('')+version+'</div></article>';
+ const destination=site||repo.html_url;
+ return '<article class="project" role="link" tabindex="0" data-destination="'+esc(destination)+'" aria-label="Open '+esc(title)+' website"><div class="project-top"><div class="project-icon">'+esc(title.slice(0,2).toUpperCase())+'</div><span class="tag">'+(release?'LATEST RELEASE':'GITHUB PROJECT')+'</span></div><h3>'+esc(title)+'</h3><p>'+esc(desc)+'</p><div class="project-foot">'+downloads.join('')+version+'</div></article>';
 }
 async function loadProjects(){
  try{
