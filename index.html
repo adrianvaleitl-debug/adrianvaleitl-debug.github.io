@@ -67,6 +67,102 @@ html,body{height:100%;overflow:hidden}
 }
 @media(prefers-reduced-motion:reduce){.page{scroll-behavior:auto}}
 </style>
+
+<style id="continuous-landscape-hub">
+/* A single continuous horizontal workspace, not a row of slide-like pages. */
+html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
+.workspace{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.topline{flex:0 0 60px;height:60px}
+.page{
+ height:calc(100dvh - 60px);flex:1 1 auto;min-height:0;width:100%;max-width:none;margin:0;
+ display:flex;align-items:stretch;gap:clamp(30px,4vw,62px);
+ padding:0 clamp(26px,4vw,60px) 15px;
+ overflow-x:auto;overflow-y:hidden;scroll-snap-type:none;scroll-behavior:auto;
+ overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;
+}
+.page::-webkit-scrollbar{height:7px}.page::-webkit-scrollbar-thumb{background:var(--accent);border-radius:99px}
+.page>.hero,.page>.section,.page>.projects-wrap,.page>.footer{
+ flex:0 0 clamp(650px,72vw,940px);width:auto;min-width:0;max-width:none;
+ height:100%;min-height:0;max-height:none;margin:0;padding:clamp(86px,11vh,112px) 0 35px;
+ overflow:visible;scroll-snap-align:none;scroll-snap-stop:normal;
+ display:flex;flex-direction:column;justify-content:center;align-self:stretch;
+ border:0!important;background:transparent;
+}
+.page>.hero{flex-basis:clamp(700px,78vw,1020px);display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(22px,3vw,42px);align-items:center;padding-top:70px}
+.page>.hero h1{font-size:clamp(48px,5.3vw,76px);margin:12px 0 14px}
+.page>.hero .lead{font-size:12px;line-height:1.75;max-width:520px}
+.page>.hero-card{padding:clamp(16px,2vw,22px)}
+.page>.section{border-top:0;padding-top:86px;padding-bottom:35px}
+.page>.section:before{display:none!important}
+.page>.section .section-head,.page>.projects-wrap .section-head{margin-bottom:17px;align-items:end}
+.page>.section .section-head h2,.page>.projects-wrap .section-head h2{font-size:clamp(27px,3vw,39px)}
+.page .section-note{font-size:10px;max-width:300px}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.page .download-card{min-height:130px;padding:13px}
+.page .download-card .mini-icon{width:30px;height:30px;margin-bottom:9px}
+.page .download-card strong{font-size:11px}
+.page .download-card small{font-size:9px}
+.page>.projects-wrap{flex-basis:clamp(700px,77vw,1010px);padding:86px 0 35px;background:transparent;border:0}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.page .project-card{min-height:190px;padding:15px}
+.page .project-card h3{font-size:17px;margin:10px 0 3px}
+.page .project-card p{font-size:10px;line-height:1.5}
+.page .project-links{gap:5px;padding-top:10px}
+.page .project-links a{font-size:8px;padding:6px 7px}
+.page .release-list{gap:7px}
+.page .release{padding:10px 13px;gap:10px}
+.page .release strong{font-size:10px}
+.page .release p{font-size:9px}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.page .social-card{min-height:100px;padding:13px}
+.page .social-card strong{font-size:11px}
+.page .social-card small{font-size:9px}
+.page .about-grid{grid-template-columns:1fr 1fr;gap:10px}
+.page .about-card{padding:17px}
+.page .about-card h3{font-size:18px}
+.page .about-card p{font-size:10px;line-height:1.7;margin:7px 0}
+.page .values{gap:6px;margin-top:11px}
+.page .value{padding:8px}
+.page .value b{font-size:9px}
+.page .value small{font-size:8px}
+.page>.section#appearance{flex-basis:clamp(620px,65vw,820px)}
+.page #appearance .theme-panel{margin:0;max-width:none;align-items:flex-start;flex-direction:column;gap:14px}
+.page>.footer{flex:0 0 280px;width:280px;align-items:flex-start;justify-content:center;gap:13px;padding-top:85px;padding-bottom:35px;font-size:9px}
+.page>.footer:before{content:"ADRIAN VALE · INDEPENDENTLY BUILT";font:9px var(--mono);letter-spacing:.12em;color:var(--accent)}
+.sidebar{z-index:30}
+@media(max-height:760px) and (min-width:701px){
+ .page>.hero,.page>.section,.page>.projects-wrap{padding-top:76px;padding-bottom:22px}
+ .page>.hero h1{font-size:clamp(43px,4.7vw,65px)}
+ .page .project-card{min-height:165px;padding:12px}
+ .page .download-card{min-height:112px;padding:11px}
+ .page .social-card{min-height:86px;padding:10px}
+}
+@media(max-width:700px){
+ html,body{overflow:hidden!important}
+ .workspace{height:calc(100dvh - 116px);min-height:0}
+ .topline{flex-basis:45px;height:45px;padding-inline:15px}
+ .page{height:calc(100dvh - 161px);flex:1 1 auto;gap:25px;padding:0 17px 12px}
+ .page>.hero,.page>.section,.page>.projects-wrap,.page>.footer{
+  flex-basis:86vw;width:86vw;height:100%;min-height:0;padding:78px 0 22px;overflow:visible
+ }
+ .page>.hero{flex-basis:90vw;display:flex;justify-content:center;gap:15px}
+ .page>.hero h1{font-size:clamp(43px,12vw,62px)}
+ .page .download-grid,.page .project-grid,.page .about-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page .download-card{min-height:115px}
+ .page .project-card{min-height:180px}
+ .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page>.projects-wrap{flex-basis:90vw}
+ .page>.section#appearance{flex-basis:84vw}
+ .page>.footer{flex-basis:240px;width:240px}
+ .sidebar{padding:10px 13px}
+}
+@media(max-width:430px){
+ .page .download-grid,.page .project-grid,.page .about-grid{grid-template-columns:1fr}
+ .page .download-card{min-height:95px}
+ .page .project-card{min-height:150px}
+ .page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
 </head>
 <body>
 <aside class="sidebar">
@@ -137,4 +233,8 @@ function downloadCard(r,rel){const a=assets(rel),target=a.exe||a.zip;return '<a 
 function projectCard(r,rel){const a=assets(rel),links=[],s=site(r);if(a.exe)links.push('<a class="get" href="'+esc(a.exe.browser_download_url)+'" target="_blank" rel="noreferrer">WINDOWS SETUP ↓</a>');if(a.zip)links.push('<a class="get" href="'+esc(a.zip.browser_download_url)+'" target="_blank" rel="noreferrer">PORTABLE ZIP ↓</a>');if(s)links.push('<a href="'+esc(s)+'" target="_blank" rel="noreferrer">WEBSITE ↗</a>');links.push('<a href="'+esc(r.html_url)+'" target="_blank" rel="noreferrer">GITHUB ↗</a>');if(rel)links.push('<a href="'+esc(rel.html_url)+'" target="_blank" rel="noreferrer">RELEASE NOTES ↗</a>');return '<article class="project-card"><div class="project-top"><span class="project-mark">'+esc(pretty(r.name).slice(0,2).toUpperCase())+'</span><span class="tag">'+(rel?'LATEST '+esc(rel.tag_name):'PUBLIC REPOSITORY')+'</span></div><h3>'+esc(pretty(r.name))+'</h3><p>'+esc(r.description||'An independent project by Adrian Vale.')+'</p><div class="project-meta">'+(rel?'PUBLISHED '+new Date(rel.published_at||rel.created_at).toLocaleDateString():'SOURCE CODE & PROJECT LINKS')+'</div><div class="project-links">'+links.join('')+'</div></article>'}
 async function load(){const d=$('downloadsGrid'),p=$('projectsGrid'),u=$('releaseList');try{const repos=await json('https://api.github.com/users/'+OWNER+'/repos?type=owner&sort=updated&per_page=100');const list=repos.filter(r=>!r.fork&&!r.archived&&!EXCLUDED.has(r.name)&&r.visibility==='public');list.sort((a,b)=>{const ai=PINNED.indexOf(a.name.toLowerCase()),bi=PINNED.indexOf(b.name.toLowerCase());return (ai<0?999:ai)-(bi<0?999:bi)||new Date(b.pushed_at)-new Date(a.pushed_at)});if(!list.length)throw new Error('No public repositories found');const rels=await Promise.all(list.map(r=>latest(r.name)));d.innerHTML=list.map((r,i)=>downloadCard(r,rels[i])).join('');p.innerHTML=list.map((r,i)=>projectCard(r,rels[i])).join('');const recent=list.map((r,i)=>({r,rel:rels[i]})).filter(x=>x.rel).sort((a,b)=>new Date(b.rel.published_at||b.rel.created_at)-new Date(a.rel.published_at||a.rel.created_at)).slice(0,8);u.innerHTML=recent.length?recent.map(x=>'<div class="release"><div><strong>'+esc(pretty(x.r.name))+' — '+esc(x.rel.name||x.rel.tag_name)+'</strong><p>'+esc((x.rel.body||'Latest public release.').replace(/[#>*_]/g,' ').slice(0,130))+'</p></div><span class="tag">'+esc(x.rel.tag_name)+'</span><a href="'+esc(x.rel.html_url)+'" target="_blank" rel="noreferrer">VIEW RELEASE ↗</a></div>').join(''):'<div class="empty">No published releases yet.</div>'}catch(e){const m='GitHub data could not be loaded ('+esc(e.message)+'). Refresh the page to try again.';d.innerHTML='<div class="empty">'+m+'</div>';p.innerHTML='<div class="empty">'+m+'</div>';u.innerHTML='<div class="empty">'+m+'</div>'}}
 load();
-</script></body></html>
+</script>
+<script id="continuous-wheel-navigation">
+(()=>{const rail=document.getElementById('home');if(!rail)return;let target=rail.scrollLeft,raf=0,last=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const clamp=v=>Math.max(0,Math.min(rail.scrollWidth-rail.clientWidth,v));function tick(now){const dt=last?Math.min(32,now-last):16;last=now;const diff=target-rail.scrollLeft;const ease=reduced?1:1-Math.pow(.002,dt/16);if(Math.abs(diff)<.35){rail.scrollLeft=target;raf=0;last=0;return}rail.scrollLeft+=diff*ease;raf=requestAnimationFrame(tick)}function move(delta){target=clamp(target+delta);if(!raf)raf=requestAnimationFrame(tick)}rail.addEventListener('wheel',e=>{if(e.ctrlKey)return;let dy=e.deltaY,dx=e.deltaX;if(e.deltaMode===1){dy*=16;dx*=16}else if(e.deltaMode===2){dy*=rail.clientHeight;dx*=rail.clientWidth}const d=Math.abs(dy)>Math.abs(dx)?dy:dx;if(d){e.preventDefault();move(d)}},{passive:false});rail.addEventListener('scroll',()=>{if(!raf)target=rail.scrollLeft},{passive:true});document.querySelectorAll('.nav a[href^="#"],.quicklinks a[href^="#"],.hero-actions a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el&&rail.contains(el)){e.preventDefault();target=clamp(el.offsetLeft-rail.offsetLeft);if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(tick)}}));})();
+</script>
+</body></html>
