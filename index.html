@@ -292,6 +292,15 @@ body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))
 body>footer.footer:before,body>footer.footer>span{white-space:nowrap}
 @media(max-width:700px){.topline{padding-inline:14px!important}body>footer.footer{left:8px!important;right:8px!important;width:auto!important}}
 </style>
+<style id="final-viewport-centering">
+/* Workspace starts after the fixed 252px sidebar: centre the header contents on that canvas. */
+.workspace{width:calc(100vw - 252px)!important;margin-left:252px!important}
+.topline{justify-content:center!important;position:relative!important}
+.topline>.crumb{position:absolute!important;left:clamp(16px,3vw,42px)!important}
+.topline>.top-actions{margin-inline:auto!important}
+body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))/2)!important;right:auto!important;width:min(1160px,calc(100vw - 276px))!important;transform:none!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:10px 26px!important}
+@media(max-width:700px){.workspace{width:100vw!important;margin-left:0!important}.topline{justify-content:center!important}.topline>.crumb{display:none!important}body>footer.footer{left:8px!important;right:8px!important;width:auto!important}}
+</style>
 </head>
 <body>
 <aside class="sidebar">
