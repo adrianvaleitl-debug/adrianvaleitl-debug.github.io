@@ -221,7 +221,19 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
  .page{height:calc(100dvh - 138px);flex:1 1 auto}
 }
 </style>
-</head>
+
+<style id="priority-and-larger-hub">
+.page>#home{order:0}.page>#downloads{order:1}.page>#updates{order:2}.page>#projects{order:3}.page>#links{order:4}.page>#building{order:5}.page>#appearance{order:6}.page>.footer{order:7}
+.page>.hero h1{font-size:clamp(58px,6.2vw,92px)}.page>.hero .lead{font-size:clamp(14px,1.15vw,17px);max-width:650px}.page>.hero .hero-card{padding:clamp(22px,2.5vw,34px)}.page>.hero .hero-card h2{font-size:clamp(23px,2vw,30px)}
+.page .section-head h2,.page .projects-wrap .section-head h2{font-size:clamp(34px,3.6vw,50px)}.page .section-note{font-size:clamp(12px,1vw,14px);max-width:420px}
+.page .download-card{min-height:clamp(150px,19vh,210px);padding:clamp(16px,1.6vw,23px)}.page .download-card strong{font-size:clamp(14px,1.15vw,17px)}.page .download-card small{font-size:12px}
+.page .project-card{min-height:clamp(220px,27vh,290px);padding:clamp(18px,1.8vw,26px)}.page .project-card h3{font-size:clamp(20px,1.7vw,25px)}.page .project-card p{font-size:12px;line-height:1.7}
+.page .release{padding:16px 20px}.page .release strong{font-size:14px}.page .release p{font-size:12px}
+.page .social-card{min-height:clamp(125px,16vh,175px);padding:19px}.page .social-card strong{font-size:14px}.page .social-card small{font-size:12px}
+.footer{width:100%;flex:0 0 340px!important;display:flex;flex-direction:column;align-items:flex-start!important;justify-content:center!important;gap:18px!important}
+.footer-about{max-width:620px;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.footer-about strong{font:10px var(--mono);letter-spacing:.14em;color:var(--accent)}.footer-about p{font:13px/1.8 var(--sans);color:var(--muted);margin:8px 0 0}
+@media(max-width:700px){.page>.hero h1{font-size:clamp(48px,13vw,66px)}.page .download-card{min-height:125px}.page .project-card{min-height:190px}.footer{flex-basis:300px!important}}
+</style></head>
 <body>
 <aside class="sidebar">
 <a class="brand" href="#home"><span class="brandmark">AV</span><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
@@ -232,7 +244,7 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 <a href="#projects"><span class="navicon">▦</span>Projects</a>
 <a href="#updates"><span class="navicon">↻</span>Updates</a>
 <a href="#links"><span class="navicon">↗</span>All links</a>
-<a href="#about"><span class="navicon">◉</span>About me</a>
+
 <a href="#building"><span class="navicon">✦</span>What I build</a><a href="#appearance"><span class="navicon">◐</span>Appearance</a>
 </nav>
 <div class="side-bottom"><div class="side-card"><b>Something not working?</b><p>Open the relevant project on GitHub and report an issue.</p><a href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div><div class="side-foot">INDEPENDENTLY BUILT BY ADRIAN</div></div>
@@ -256,9 +268,7 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 <a class="social-card" href="https://github.com/adrianvaleitl-debug/SoloDesk" target="_blank" rel="noreferrer"><strong>SoloDesk</strong><small>Project repository</small><span>OPEN PROJECT ↗</span></a>
 <a class="social-card" href="https://github.com/adrianvaleitl-debug/DayFlow" target="_blank" rel="noreferrer"><strong>DayFlow</strong><small>Project repository</small><span>OPEN PROJECT ↗</span></a>
 </div></section>
-<section class="section" id="about"><div class="section-head"><div><div class="section-index">05 / ABOUT</div><h2>Hey, I'm Adrian.</h2></div><p class="section-note">The person behind the projects.</p></div><div class="about-grid">
-<div class="about-card"><h3>Ideas into actual products.</h3><p>I'm an independent software maker from the UK. I enjoy coming up with useful ideas, building programs and websites, and improving them over time.</p><p>This site brings my work together so it's easy to find the right download, follow an update or explore a project.</p><div class="values"><div class="value"><b>Think</b><small>Start with useful ideas</small></div><div class="value"><b>Build</b><small>Turn them into products</small></div><div class="value"><b>Improve</b><small>Keep making things better</small></div><div class="value"><b>Share</b><small>Make everything easy to find</small></div></div></div>
-<div class="about-card"><h3>One place for everything.</h3><p>New public repositories are discovered automatically. Downloads and release versions are taken from GitHub, so this page can stay current as projects receive updates.</p><p>Each project links to its own website and source repository. For support, open an issue on the relevant GitHub project.</p><a class="btn" href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">BROWSE MY GITHUB ↗</a></div></div></section>
+
 <section class="section" id="building"><div class="section-head"><div><div class="section-index">06 / HOW I WORK</div><h2>Ideas, built properly.</h2></div><p class="section-note">A little more about the thinking behind the software, the details I care about and what I want each project to feel like.</p></div><div class="about-grid build-grid">
 <article class="about-card"><h3>Useful first.</h3><p>I look for everyday problems where a small, well-made tool can save time, remove friction or make something easier to understand.</p></article>
 <article class="about-card"><h3>Designed to feel clear.</h3><p>Simple navigation, readable layouts and sensible defaults matter just as much as the feature list.</p></article>
@@ -273,7 +283,7 @@ html,body{height:100%;overflow:hidden!important;overscroll-behavior:none}
 <button class="swatch" data-accent-choice="yen" aria-pressed="false"><i style="background:#e9aebc"></i>Rose</button>
 <button class="swatch" data-accent-choice="franc" aria-pressed="false"><i style="background:#9fcbd0"></i>Teal</button>
 </div></div></section>
-<footer class="footer"><span>© <span id="year"></span> ADRIAN VALE · BUILT INDEPENDENTLY</span><span><a href="https://github.com/adrianvaleitl-debug">GITHUB</a> · <a href="https://www.youtube.com/@Adrianvaleitl">YOUTUBE</a> · <a href="https://www.tiktok.com/@adrianvaleitl">TIKTOK</a> · <a href="https://ko-fi.com/marketinsight">KO-FI</a></span></footer>
+<footer class="footer"><div class="footer-about"><strong>ABOUT ADRIAN</strong><p>Independent software maker from the UK. I turn useful ideas into programs and websites, then keep improving and sharing them.</p></div><span>© <span id="year"></span> ADRIAN VALE · BUILT INDEPENDENTLY</span><span><a href="https://github.com/adrianvaleitl-debug">GITHUB</a> · <a href="https://www.youtube.com/@Adrianvaleitl">YOUTUBE</a> · <a href="https://www.tiktok.com/@adrianvaleitl">TIKTOK</a> · <a href="https://ko-fi.com/marketinsight">KO-FI</a></span></footer>
 </main></div>
 <script>
 'use strict';
