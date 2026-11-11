@@ -2,7 +2,7 @@
 <html lang="en" data-mode="dark" data-accent="euro">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#171923"><meta name="description" content="Adrian Vale's central hub for software, downloads, project websites, releases and creator links.">
+<meta name="theme-color" content="#171923"><link rel="icon" type="image/svg+xml" href="brand.svg"><meta name="description" content="Adrian Vale's central hub for software, downloads, project websites, releases and creator links.">
 <title>Adrian Vale — Central Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@ html[data-mode="dark"]{--bg:#171820;--side:#1d1f29;--panel:#222530;--panel2:#292
 html[data-mode="light"]{--bg:#f5f3f0;--side:#eeece8;--panel:#fffdfa;--panel2:#f1efeb;--ink:#252631;--muted:#6d6e79;--line:#dedce0;--soft:#eeedf0;--shadow:0 16px 40px #34303a0d;color-scheme:light}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:25px}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 var(--sans);transition:background .2s,color .2s}a{color:inherit;text-decoration:none}button{font:inherit}
 .sidebar{position:fixed;inset:0 auto 0 0;width:252px;background:var(--side);border-right:1px solid var(--line);padding:27px 19px;display:flex;flex-direction:column;z-index:20}
-.brand{display:flex;align-items:center;gap:12px;padding:2px 8px 29px;border-bottom:1px solid var(--line)}.brandmark{height:42px;width:42px;border-radius:13px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font:13px var(--mono);font-weight:500}.brand strong{display:block;font-size:13px;letter-spacing:.02em}.brand small{display:block;color:var(--muted);font:9px var(--mono);letter-spacing:.1em;margin-top:2px}
+.brand{display:flex;align-items:center;gap:12px;padding:2px 8px 29px;border-bottom:1px solid var(--line)}.brandmark{height:42px;width:42px;border-radius:13px;display:block;object-fit:cover}.brand strong{display:block;font-size:13px;letter-spacing:.02em}.brand small{display:block;color:var(--muted);font:9px var(--mono);letter-spacing:.1em;margin-top:2px}
 .navlabel{font:9px var(--mono);letter-spacing:.15em;color:var(--muted);padding:25px 10px 9px}.nav{display:grid;gap:5px}.nav a{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;color:var(--muted);font-size:12px;font-weight:700;transition:background .15s,color .15s}.nav a:hover,.nav a.active{background:var(--panel2);color:var(--ink)}.nav a.active .navicon{color:var(--accent)}.navicon{width:19px;text-align:center;font-size:15px;color:var(--muted)}
 .side-bottom{margin-top:auto}.side-card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px}.side-card b{font-size:11px}.side-card p{font-size:10px;color:var(--muted);margin:4px 0 12px}.side-card a{font-size:10px;color:var(--accent);font-weight:800}.side-foot{padding:16px 7px 0;color:var(--muted);font:9px var(--mono)}
 .workspace{margin-left:252px;min-height:100vh}.topline{height:67px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 42px;background:var(--bg)}.crumb{font:10px var(--mono);letter-spacing:.12em;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:10px}.modebtn{border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:var(--panel);color:var(--ink);font:10px var(--mono);cursor:pointer}.modebtn:hover{border-color:var(--accent)}
@@ -25,7 +25,7 @@ html[data-mode="light"]{--bg:#f5f3f0;--side:#eeece8;--panel:#fffdfa;--panel2:#f1
 .hero-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow)}.card-label{font:9px var(--mono);letter-spacing:.13em;color:var(--muted)}.hero-card h2{font-size:21px;letter-spacing:-.05em;margin:20px 0 3px}.hero-card p{font-size:11px;color:var(--muted);margin:0 0 15px}.quicklinks{display:grid;gap:8px}.quicklinks a{padding:11px 12px;border:1px solid var(--line);border-radius:9px;display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700}.quicklinks a:hover{border-color:var(--accent);background:var(--panel2)}.quicklinks span:last-child{color:var(--accent)}
 .section{padding:48px 0 62px;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{font-size:clamp(27px,4vw,42px);letter-spacing:-.07em;line-height:1.1;margin:7px 0 0}.section-note{max-width:360px;color:var(--muted);font-size:11px}
 .download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.download-card,.project-card,.social-card,.about-card,.release{background:var(--panel);border:1px solid var(--line);border-radius:13px}.download-card{padding:17px;display:flex;flex-direction:column;min-height:145px}.download-card:hover,.project-card:hover,.social-card:hover{border-color:var(--accent);background:var(--panel2)}.mini-icon{width:34px;height:34px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);border-radius:9px;font:12px var(--mono);margin-bottom:14px}.download-card strong{font-size:13px}.download-card small{font-size:10px;color:var(--muted);margin-top:3px}.download-card span:last-child{font:9px var(--mono);color:var(--accent);margin-top:auto;padding-top:15px}
-.projects-wrap{background:var(--side);margin:0 -42px;padding:48px 42px 58px;border-block:1px solid var(--line)}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.project-card{padding:20px;display:flex;flex-direction:column;min-height:230px}.project-top{display:flex;justify-content:space-between;align-items:center}.project-mark{height:39px;width:39px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);border-radius:11px;font:12px var(--mono)}.tag{font:9px var(--mono);color:var(--muted);border:1px solid var(--line);padding:5px 8px;border-radius:99px}.project-card h3{font-size:20px;letter-spacing:-.05em;margin:15px 0 4px}.project-card p{font-size:11px;color:var(--muted);margin:0 0 12px}.project-meta{font:9px var(--mono);color:var(--muted)}.project-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:15px}.project-links a,.release a{border:1px solid var(--line);border-radius:7px;padding:7px 9px;font:9px var(--mono)}.project-links a:hover,.release a:hover{border-color:var(--accent);color:var(--accent)}.project-links .get{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.projects-wrap{background:var(--side);margin:0 -42px;padding:48px 42px 58px;border-block:1px solid var(--line)}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.project-card{padding:20px;display:flex;flex-direction:column;min-height:230px}.project-top{display:flex;justify-content:space-between;align-items:center}.project-mark{height:39px;width:39px;display:block;object-fit:cover;border-radius:11px;background:var(--panel2)}.mini-icon img{width:100%;height:100%;display:block;object-fit:cover;border-radius:inherit}.tag{font:9px var(--mono);color:var(--muted);border:1px solid var(--line);padding:5px 8px;border-radius:99px}.project-card h3{font-size:20px;letter-spacing:-.05em;margin:15px 0 4px}.project-card p{font-size:11px;color:var(--muted);margin:0 0 12px}.project-meta{font:9px var(--mono);color:var(--muted)}.project-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:15px}.project-links a,.release a{border:1px solid var(--line);border-radius:7px;padding:7px 9px;font:9px var(--mono)}.project-links a:hover,.release a:hover{border-color:var(--accent);color:var(--accent)}.project-links .get{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .release-list{display:grid;gap:9px}.release{padding:14px 16px;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:15px}.release strong{font-size:12px}.release p{font-size:10px;color:var(--muted);margin:3px 0 0}.release .tag{color:var(--accent)}
 .social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.social-card{padding:16px;min-height:110px;display:flex;flex-direction:column}.social-card strong{font-size:12px}.social-card small{font-size:10px;color:var(--muted);margin-top:4px}.social-card span{font:9px var(--mono);color:var(--accent);margin-top:auto;padding-top:12px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.about-card{padding:23px}.about-card h3{font-size:21px;letter-spacing:-.05em;margin:0 0 9px}.about-card p{font-size:11px;line-height:1.9;color:var(--muted)}.values{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:17px}.value{padding:11px;background:var(--panel2);border:1px solid var(--line);border-radius:9px}.value b{display:block;font-size:10px}.value small{font-size:9px;color:var(--muted)}
@@ -279,7 +279,7 @@ html[data-mode="light"] body:before{display:none}
 .other-projects .other-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
 .other-projects .other-project-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:190px;padding:20px;border:1px solid var(--line,#263449);border-radius:18px;background:var(--panel,#151e2c);color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .other-projects .other-project-card:hover{transform:translateY(-3px);border-color:var(--accent,var(--blue,#75b7ff));background:var(--panel2,var(--panel,#151e2c))}
-.other-project-mark{display:grid;place-items:center;width:42px;height:42px;margin-bottom:14px;border-radius:12px;background:var(--accent-soft,rgba(117,183,255,.14));color:var(--accent,var(--blue,#75b7ff));font-weight:800;font-size:13px}
+.other-project-mark{display:block;width:42px;height:42px;object-fit:cover;margin-bottom:14px;border-radius:12px}
 .other-project-card strong{font-size:19px}.other-project-card p{font-size:14px;line-height:1.6;color:var(--muted,#9eafc5);margin:7px 0 16px}
 .other-project-visit{margin-top:auto;font-size:10px;font-weight:800;letter-spacing:.1em;color:var(--accent,var(--blue,#75b7ff))}
 @media(max-width:800px){.other-projects .other-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -305,7 +305,7 @@ body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))
 </head>
 <body>
 <aside class="sidebar">
-<a class="brand" href="#home"><span class="brandmark">AV</span><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
+<a class="brand" href="#home"><img class="brandmark" src="brand.svg" alt="Adrian Vale logo"><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
 <div class="navlabel">WORKSPACE</div>
 <nav class="nav" id="nav">
 <a class="active" href="#home"><span class="navicon">⌂</span>Overview</a>
@@ -353,7 +353,7 @@ body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))
 <button class="swatch" data-accent-choice="franc" aria-pressed="false"><i style="background:#9fcbd0"></i>Teal</button>
 </div></div></section>
 
-<section class="section other-projects" id="my-other-projects"><div class="section-head"><div><div class="eyebrow">MORE FROM ADRIAN</div><h2>My other projects.</h2></div><p>Explore the other websites and projects in my collection.</p></div><div class="other-project-grid"><a class="other-project-card" href="https://adrianvaleitl-debug.github.io/DayFlow/" target="_blank" rel="noopener noreferrer"><span class="other-project-mark">DF</span><strong>DayFlow</strong><p>A calmer way to plan tasks, habits and focused work.</p><span class="other-project-visit">VISIT WEBSITE ↗</span></a><a class="other-project-card" href="https://adrianvaleitl-debug.github.io/SoloDesk/" target="_blank" rel="noopener noreferrer"><span class="other-project-mark">SD</span><strong>SoloDesk</strong><p>A practical workspace for everyday small-business admin.</p><span class="other-project-visit">VISIT WEBSITE ↗</span></a><a class="other-project-card" href="https://adrianvaleitl-debug.github.io/market-insight/" target="_blank" rel="noopener noreferrer"><span class="other-project-mark">MI</span><strong>Market Insight</strong><p>A Windows stock scanner and research workspace.</p><span class="other-project-visit">VISIT WEBSITE ↗</span></a></div></section>
+<section class="section other-projects" id="my-other-projects"><div class="section-head"><div><div class="eyebrow">MORE FROM ADRIAN</div><h2>My other projects.</h2></div><p>Explore the other websites and projects in my collection.</p></div><div class="other-project-grid"><a class="other-project-card" href="https://adrianvaleitl-debug.github.io/DayFlow/" target="_blank" rel="noopener noreferrer"><img class="other-project-mark" src="https://raw.githubusercontent.com/adrianvaleitl-debug/DayFlow/main/assets/dayflow.svg" alt="DayFlow logo"><strong>DayFlow</strong><p>A calmer way to plan tasks, habits and focused work.</p><span class="other-project-visit">VISIT WEBSITE ↗</span></a><a class="other-project-card" href="https://adrianvaleitl-debug.github.io/SoloDesk/" target="_blank" rel="noopener noreferrer"><img class="other-project-mark" src="https://raw.githubusercontent.com/adrianvaleitl-debug/SoloDesk/main/assets/solodesk-logo.svg" alt="SoloDesk logo"><strong>SoloDesk</strong><p>A practical workspace for everyday small-business admin.</p><span class="other-project-visit">VISIT WEBSITE ↗</span></a><a class="other-project-card" href="https://adrianvaleitl-debug.github.io/market-insight/" target="_blank" rel="noopener noreferrer"><img class="other-project-mark" src="https://raw.githubusercontent.com/adrianvaleitl-debug/market-insight/main/favicon.svg" alt="Market Insight logo"><strong>Market Insight</strong><p>A Windows stock scanner and research workspace.</p><span class="other-project-visit">VISIT WEBSITE ↗</span></a></div></section>
 <footer class="footer"><div class="footer-about"><strong>ABOUT ADRIAN</strong><p>Independent software maker from the UK. I turn useful ideas into programs and websites, then keep improving and sharing them.</p></div><span>© <span id="year"></span> ADRIAN VALE · BUILT INDEPENDENTLY</span><span><a href="https://github.com/adrianvaleitl-debug">GITHUB</a> · <a href="https://www.youtube.com/@Adrianvaleitl">YOUTUBE</a> · <a href="https://www.tiktok.com/@adrianvaleitl">TIKTOK</a> · <a href="https://ko-fi.com/marketinsight">KO-FI</a></span></footer>
 </main></div>
 <script>
@@ -373,7 +373,203 @@ document.querySelectorAll('[data-accent-choice]').forEach(b=>b.addEventListener(
 async function json(url){const r=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});if(!r.ok)throw new Error('GitHub returned '+r.status);return r.json()}
 async function latest(name){try{return await json('https://api.github.com/repos/'+OWNER+'/'+encodeURIComponent(name)+'/releases/latest')}catch{return null}}
 function site(r){return r.homepage&&/^https?:\/\//i.test(r.homepage)?r.homepage:(r.has_pages?'https://'+OWNER+'.github.io/'+encodeURIComponent(r.name)+'/':null)}
-function assets(rel){const a=rel?.assets||[];return {exe:a.find(x=>/\.exe$/i.test(x.name)),zip:a.find(x=>/\.zip$/i.test(x.name))}}
+function versionOf(value){return (String(value||'').match(/\d+(?:\.\d+)+/)||[])[0]||''}
+function newest(list){return [...list].sort((a,b)=>{const av=versionOf(a.name).split('.').map(Number),bv=versionOf(b.name).split('.').map(Number);for(let i=0;i<Math.max(av.length,bv.length);i++){const d=(bv[i]||0)-(av[i]||0);if(d)return d}return 0})[0]}
+function assets(rel){const a=rel?.assets||[],v=versionOf(rel?.tag_name);const exact=ext=>a.find(x=>new RegExp('\\.'+ext+'
+function logo(r){const n=r.name.toLowerCase();if(n==='dayflow')return 'https://raw.githubusercontent.com/adrianvaleitl-debug/DayFlow/main/assets/dayflow.svg';if(n==='market-insight')return 'https://raw.githubusercontent.com/adrianvaleitl-debug/market-insight/main/favicon.svg';if(n==='solodesk')return 'https://raw.githubusercontent.com/adrianvaleitl-debug/SoloDesk/main/assets/solodesk-logo.svg';return 'brand.svg'}
+function downloadCard(r,rel){const a=assets(rel),target=a.exe||a.zip;return '<a class="download-card" href="'+esc(target?.browser_download_url||rel?.html_url||r.html_url)+'" target="_blank" rel="noreferrer"><span class="mini-icon"><img src="'+esc(logo(r))+'" alt=""></span><strong>'+esc(pretty(r.name))+'</strong><small>'+(a.exe?'Windows installer · '+esc(rel.tag_name):a.zip?'Portable ZIP · '+esc(rel.tag_name):rel?'Latest release · '+esc(rel.tag_name):'Open repository')+'</small><span>'+(target?'DOWNLOAD LATEST BUILD ↓':'VIEW RELEASES ↗')+'</span></a>'}
+function projectCard(r,rel){const a=assets(rel),links=[],s=site(r);if(a.exe)links.push('<a class="get" href="'+esc(a.exe.browser_download_url)+'" target="_blank" rel="noreferrer">WINDOWS SETUP ↓</a>');if(a.zip)links.push('<a class="get" href="'+esc(a.zip.browser_download_url)+'" target="_blank" rel="noreferrer">PORTABLE ZIP ↓</a>');if(s)links.push('<a href="'+esc(s)+'" target="_blank" rel="noreferrer">WEBSITE ↗</a>');links.push('<a href="'+esc(r.html_url)+'" target="_blank" rel="noreferrer">GITHUB ↗</a>');if(rel)links.push('<a href="'+esc(rel.html_url)+'" target="_blank" rel="noreferrer">RELEASE NOTES ↗</a>');return '<article class="project-card"'+(s?' data-website="'+esc(s)+'" role="link" tabindex="0" aria-label="Open '+esc(pretty(r.name))+' website"':'')+'><div class="project-top"><img class="project-mark" src="'+esc(logo(r))+'" alt="'+esc(pretty(r.name))+' logo"><span class="tag">'+(rel?'LATEST '+esc(rel.tag_name):'PUBLIC REPOSITORY')+'</span></div><h3>'+esc(pretty(r.name))+'</h3><p>'+esc(r.description||'An independent project by Adrian Vale.')+'</p><div class="project-meta">'+(rel?'PUBLISHED '+new Date(rel.published_at||rel.created_at).toLocaleDateString():'SOURCE CODE & PROJECT LINKS')+'</div><div class="project-links">'+links.join('')+'</div></article>'}
+async function load(){const d=$('downloadsGrid'),p=$('projectsGrid'),u=$('releaseList');try{const repos=await json('https://api.github.com/users/'+OWNER+'/repos?type=owner&sort=updated&per_page=100');const list=repos.filter(r=>!r.fork&&!r.archived&&!EXCLUDED.has(r.name)&&r.visibility==='public');list.sort((a,b)=>{const ai=PINNED.indexOf(a.name.toLowerCase()),bi=PINNED.indexOf(b.name.toLowerCase());return (ai<0?999:ai)-(bi<0?999:bi)||new Date(b.pushed_at)-new Date(a.pushed_at)});if(!list.length)throw new Error('No public repositories found');const rels=await Promise.all(list.map(r=>latest(r.name)));d.innerHTML=list.map((r,i)=>downloadCard(r,rels[i])).join('');p.innerHTML=list.map((r,i)=>projectCard(r,rels[i])).join('');const recent=list.map((r,i)=>({r,rel:rels[i]})).filter(x=>x.rel).sort((a,b)=>new Date(b.rel.published_at||b.rel.created_at)-new Date(a.rel.published_at||a.rel.created_at)).slice(0,8);u.innerHTML=recent.length?recent.map(x=>'<div class="release"><div><strong>'+esc(pretty(x.r.name))+' — '+esc(x.rel.name||x.rel.tag_name)+'</strong><p>'+esc((x.rel.body||'Latest public release.').replace(/[#>*_]/g,' ').slice(0,130))+'</p></div><span class="tag">'+esc(x.rel.tag_name)+'</span><a href="'+esc(x.rel.html_url)+'" target="_blank" rel="noreferrer">VIEW RELEASE ↗</a></div>').join(''):'<div class="empty">No published releases yet.</div>'}catch(e){const m='GitHub data could not be loaded ('+esc(e.message)+'). Refresh the page to try again.';d.innerHTML='<div class="empty">'+m+'</div>';p.innerHTML='<div class="empty">'+m+'</div>';u.innerHTML='<div class="empty">'+m+'</div>'}}
+load();
+</script>
+<script id="continuous-wheel-navigation">
+(()=>{const rail=document.getElementById('home');if(!rail)return;let target=rail.scrollLeft,raf=0,last=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const clamp=v=>Math.max(0,Math.min(rail.scrollWidth-rail.clientWidth,v));function tick(now){const dt=last?Math.min(32,now-last):16;last=now;const diff=target-rail.scrollLeft;const ease=reduced?1:1-Math.pow(.002,dt/16);if(Math.abs(diff)<.35){rail.scrollLeft=target;raf=0;last=0;return}rail.scrollLeft+=diff*ease;raf=requestAnimationFrame(tick)}function move(delta){target=clamp(target+delta);if(!raf)raf=requestAnimationFrame(tick)}rail.addEventListener('wheel',e=>{if(e.ctrlKey)return;let dy=e.deltaY,dx=e.deltaX;if(e.deltaMode===1){dy*=16;dx*=16}else if(e.deltaMode===2){dy*=rail.clientHeight;dx*=rail.clientWidth}const d=Math.abs(dy)>Math.abs(dx)?dy:dx;if(d){e.preventDefault();move(d)}},{passive:false});rail.addEventListener('scroll',()=>{if(!raf)target=rail.scrollLeft},{passive:true});document.querySelectorAll('.nav a[href^="#"],.quicklinks a[href^="#"],.hero-actions a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el&&rail.contains(el)){e.preventDefault();target=clamp(el.offsetLeft-rail.offsetLeft);if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(tick)}}));})();
+</script>
+
+<style id="adrian-compact-topbar-appearance">
+.topline{height:58px;flex-basis:58px;gap:18px}.top-actions{display:flex;align-items:center;gap:13px;min-width:0}
+.top-appearance{display:flex;align-items:center;gap:9px;padding:5px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-width:calc(100vw - 340px)}
+.top-appearance-label{font:9px var(--mono);letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+.top-appearance .swatches{display:flex;align-items:center;gap:5px;flex-wrap:nowrap}
+.top-appearance .swatch{width:25px;height:25px;padding:0;display:grid;place-items:center;font-size:0;flex:0 0 auto}
+.top-appearance .swatch i{width:12px;height:12px;margin:0;border-radius:50%}
+.top-appearance .swatch[aria-pressed=true]{outline:2px solid var(--accent);outline-offset:2px}
+.page{height:calc(100dvh - 134px)}.page>.section#appearance{display:none!important}
+@media(max-width:700px){.topline{height:auto;min-height:58px;flex-basis:auto;padding:7px 12px}.topline .crumb{display:none}.top-actions{width:100%;justify-content:space-between;gap:7px}.top-appearance{max-width:calc(100% - 105px);gap:6px;padding:4px 6px}.top-appearance-label{font-size:8px}.top-appearance .swatch{width:22px;height:22px}.page{height:calc(100dvh - 154px)}}
+</style>
+<script id="adrian-move-appearance-to-topbar">
+(()=>{const section=document.getElementById('appearance'),actions=document.querySelector('.top-actions'),swatches=section?.querySelector('.swatches');if(!actions||!swatches)return;const group=document.createElement('div');group.className='top-appearance';group.setAttribute('aria-label','Appearance accent colours');const label=document.createElement('span');label.className='top-appearance-label';label.textContent='APPEARANCE';group.append(label,swatches);actions.prepend(group);section.remove();document.querySelector('.nav a[href="#appearance"]')?.remove()})();
+</script>
+
+<style id="adrian-hero-highlights">
+.page>.hero{grid-template-rows:1fr auto;row-gap:clamp(16px,2.5vh,26px)}
+.page>.hero .hub-highlights{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.page>.hero .hub-highlights article{padding:12px 15px;border:1px solid var(--line);border-radius:12px;background:var(--panel);min-width:0}
+.page>.hero .hub-highlights b{display:block;font:10px var(--mono);letter-spacing:.08em;color:var(--accent);margin-bottom:3px}
+.page>.hero .hub-highlights span{display:block;color:var(--muted);font-size:10px;line-height:1.5}
+@media(max-width:700px){.page>.hero .hub-highlights{grid-template-columns:1fr 1fr}.page>.hero .hub-highlights article{padding:9px 11px}}
+@media(max-width:430px){.page>.hero .hub-highlights{grid-template-columns:1fr}}
+</style>
+<script id="adrian-add-hero-highlights">
+(()=>{const hero=document.querySelector('.page>.hero');if(!hero||hero.querySelector('.hub-highlights'))return;const panel=document.createElement('div');panel.className='hub-highlights';panel.innerHTML='<article><b>SOFTWARE & TOOLS</b><span>Practical apps built to make everyday work easier.</span></article><article><b>PROJECT UPDATES</b><span>Find releases, improvements and current downloads.</span></article><article><b>OPEN DEVELOPMENT</b><span>Explore the websites, source code and community links.</span></article>';hero.append(panel)})();
+</script>
+
+
+<style id="portfolio-final-proportion-footer-fix">
+.page{align-items:stretch;gap:clamp(28px,3vw,48px);padding-inline:clamp(24px,3.5vw,58px)}
+.page>.hero{flex:0 0 clamp(800px,82vw,1160px);width:auto;min-width:0;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);grid-template-rows:auto auto;align-content:center;gap:clamp(22px,2.6vw,38px);padding:82px 0 34px}
+.page>.section,.page>.projects-wrap{flex:0 0 clamp(740px,74vw,1060px);width:auto;min-width:0;padding:88px 0 34px;justify-content:center;gap:clamp(14px,2vh,22px)}
+.page>.section#downloads,.page>.section#updates,.page>.section#links,.page>.section#building{flex-basis:clamp(760px,76vw,1080px)}
+.page>.projects-wrap{flex-basis:clamp(780px,78vw,1100px)}
+.page .download-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page .download-card{min-height:clamp(130px,17vh,176px);padding:clamp(15px,1.5vw,21px)}
+.page .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.page .project-card{min-height:clamp(180px,22vh,230px);padding:clamp(16px,1.6vw,22px)}
+.page .social-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page .social-card{min-height:clamp(108px,14vh,146px);padding:16px}
+.page>.section#building .build-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page>.section#building .about-card{min-height:126px;padding:16px}
+.page>.section .section-head,.page>.projects-wrap .section-head{margin-bottom:clamp(14px,2vh,22px)}
+.page .section-head h2,.page .projects-wrap .section-head h2{font-size:clamp(32px,3vw,44px)}
+.page .section-note{font-size:clamp(12px,1vw,14px);line-height:1.6;max-width:440px}
+.page>.footer{flex:0 0 100vw!important;width:100vw;min-width:100vw;height:100%;min-height:100%;padding:0 clamp(28px,7vw,110px);display:grid;grid-template-columns:minmax(260px,1fr) auto;grid-template-rows:auto auto;align-content:center;align-items:center;justify-content:stretch;gap:18px 42px;border-top:1px solid var(--line);font-size:12px}
+.page>.footer:before{content:"ADRIAN VALE · INDEPENDENTLY BUILT";grid-column:1/-1;font:10px var(--mono);letter-spacing:.14em;color:var(--accent)}
+.page>.footer .footer-about{max-width:620px;padding:0;border:0;border-radius:0;background:transparent}
+.page>.footer .footer-about p{max-width:560px}
+.page>.footer>span:last-child{justify-self:end}
+.top-appearance .swatch{display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;line-height:1!important;padding:0!important;box-sizing:border-box}
+.top-appearance .swatch i{display:block!important;width:12px;height:12px;margin:0!important;flex:0 0 12px}
+@media(max-width:900px){
+.page{gap:26px;padding-inline:22px}
+.page>.hero{flex-basis:86vw;grid-template-columns:1fr;grid-template-rows:auto auto}
+.page>.section,.page>.projects-wrap{flex-basis:86vw}
+.page .download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page .social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.page>.footer{grid-template-columns:1fr;grid-template-rows:auto;align-content:center;gap:16px;padding:0 32px}
+.page>.footer>span:last-child{justify-self:start}
+}
+@media(max-width:700px){
+.page{gap:22px;padding-inline:16px}
+.page>.hero,.page>.section,.page>.projects-wrap{flex-basis:90vw;padding:78px 0 24px}
+.page>.hero{flex-basis:94vw}
+.page>.footer{flex-basis:90vw!important;width:90vw;min-width:90vw;padding:0 8px}
+.page .download-card{min-height:112px}
+.page .project-card{min-height:156px}
+}
+@media(max-width:430px){
+.page .download-grid,.page .project-grid,.page .about-grid,.page>.section#building .build-grid{grid-template-columns:1fr}
+.page .download-card{min-height:92px}
+}
+</style>
+
+
+<style id="portfolio-fixed-bottom-bar-and-type">
+/* Keep the footer fixed beneath the workspace while the horizontal canvas moves. */
+body>footer.footer{position:fixed!important;left:220px!important;right:0!important;bottom:12px!important;z-index:80!important;box-sizing:border-box;width:auto!important;min-width:0!important;height:54px!important;min-height:54px!important;max-height:54px!important;margin:0!important;padding:0 clamp(20px,3vw,46px)!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;border:1px solid var(--line)!important;border-radius:15px!important;background:var(--panel)!important;color:var(--muted)!important;font-size:12px!important;line-height:1.35!important;backdrop-filter:blur(18px);box-shadow:0 12px 35px #0003}
+body>footer.footer:before{content:"ADRIAN VALE · INDEPENDENTLY BUILT";font:10px var(--mono)!important;letter-spacing:.13em!important;color:var(--accent)!important;white-space:nowrap}
+body>footer.footer .footer-about{display:none!important}
+body>footer.footer>span{font-size:12px!important}
+body>footer.footer>span:last-child{justify-self:auto}
+body>footer.footer a{color:var(--text)!important;text-decoration:none}
+.page{height:calc(100dvh - 126px)!important}
+.page>.hero,.page>.section,.page>.projects-wrap{padding-bottom:86px!important}
+.page>.hero .lead{font-size:clamp(13px,1.05vw,15px)!important;line-height:1.75!important}
+.page .section-note{font-size:clamp(12px,.95vw,13px)!important;line-height:1.65!important}
+.page .download-card strong,.page .social-card strong{font-size:clamp(12px,1vw,14px)!important}
+.page .download-card small,.page .social-card small{font-size:clamp(10px,.85vw,12px)!important;line-height:1.55!important}
+.page .project-card p,.page .about-card p{font-size:clamp(11px,.9vw,13px)!important;line-height:1.65!important}
+.page .project-card h3,.page .about-card h3{font-size:clamp(18px,1.5vw,21px)!important}
+.page .release p{font-size:12px!important;line-height:1.55!important}
+.page .release strong{font-size:12px!important}
+@media(max-width:700px){
+ body>footer.footer{left:8px!important;right:8px!important;bottom:8px!important;width:auto!important;height:50px!important;min-height:50px!important;max-height:50px!important;padding:0 12px!important;border-radius:13px!important;gap:10px!important}
+ body>footer.footer:before{font-size:8px!important;letter-spacing:.08em!important}
+ body>footer.footer>span{font-size:9px!important}
+ body>footer.footer>span:last-child{display:none!important}
+ .workspace{height:calc(100dvh - 166px)!important}
+ .page{height:calc(100dvh - 211px)!important}
+ .page>.hero,.page>.section,.page>.projects-wrap{padding-bottom:76px!important}
+}
+</style>
+<script id="portfolio-move-footer-to-viewport">
+(()=>{const f=document.querySelector('.page>footer.footer');if(f)document.body.append(f)})();
+</script>
+
+<style id="dayflow-centered-header-footer">
+.workspace>.topline{position:fixed!important;top:0!important;left:calc(252px + (100vw - 252px)/2)!important;right:auto!important;transform:translateX(-50%)!important;width:min(1160px,calc(100vw - 284px))!important;box-sizing:border-box!important;justify-content:center!important;z-index:90!important}
+.workspace>.topline>.crumb{position:absolute!important;left:18px!important}
+.workspace>.topline>.top-actions{margin-inline:auto!important;justify-content:center!important}
+.page>.footer{position:fixed!important;left:calc(252px + (100vw - 252px)/2)!important;right:auto!important;bottom:12px!important;transform:translateX(-50%)!important;width:min(1160px,calc(100vw - 284px))!important;min-width:0!important;height:54px!important;min-height:54px!important;max-height:54px!important;box-sizing:border-box!important;display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:10px 28px!important;padding:0 22px!important;border:1px solid var(--line)!important;border-radius:16px!important;background:var(--panel)!important;backdrop-filter:blur(18px);z-index:90!important}
+@media(max-width:700px){.workspace>.topline{left:50%!important;width:calc(100vw - 16px)!important}.workspace>.topline>.crumb{display:none!important}.page>.footer{left:50%!important;width:calc(100vw - 16px)!important;bottom:8px!important;height:50px!important;min-height:50px!important;max-height:50px!important}}
+</style>
+
+
+<style id="adrian-centered-footer-and-readable-type">
+/* Centre the fixed footer within the content area to the right of the sidebar. */
+body>footer.footer{
+ left:calc(220px + (100vw - 220px - min(1160px,100vw - 244px))/2)!important;
+ right:auto!important;
+ width:min(1160px,calc(100vw - 244px))!important;
+ transform:none!important;
+ justify-content:center!important;
+ gap:clamp(18px,3vw,42px)!important;
+ text-align:center!important;
+}
+body>footer.footer:before{flex:0 0 auto}
+body>footer.footer>span{flex:0 1 auto;text-align:center}
+body{font-size:15px}
+.page .lead{font-size:clamp(14px,1.12vw,16px)!important}
+.page .section-note{font-size:clamp(13px,1vw,15px)!important}
+.page .download-card strong,.page .social-card strong{font-size:clamp(13px,1.05vw,15px)!important}
+.page .download-card small,.page .social-card small{font-size:clamp(11px,.9vw,13px)!important}
+.page .project-card p,.page .about-card p,.page .release p{font-size:clamp(12px,.95vw,14px)!important}
+@media(max-width:700px){
+ body>footer.footer{left:8px!important;right:8px!important;width:auto!important;transform:none!important;justify-content:center!important;gap:12px!important}
+}
+</style>
+
+<script id="importance-first-section-order">
+(()=> {
+ const ids=["downloads","updates","projects","links","building"];
+ const nodes=ids.map(id=>document.getElementById(id)).filter(Boolean);
+ if(nodes.length<2)return;
+ const parent=nodes[0].parentElement;
+ if(!parent||nodes.some(node=>node.parentElement!==parent))return;
+ const hero=Array.from(parent.children).find(el=>el.id==="home"||el.classList?.contains("hero"))||null;
+ const nodeSet=new Set(nodes);
+ const anchor=hero ? Array.from(parent.children).find(el=>el!==hero&&!nodeSet.has(el)&&el.compareDocumentPosition(hero)&Node.DOCUMENT_POSITION_PRECEDING) : null;
+ // Place the priority sections directly after the hero/intro, preserving the remaining content.
+ let reference=hero?.nextElementSibling||null;
+ while(reference&&nodeSet.has(reference))reference=reference.nextElementSibling;
+ if(!hero)reference=Array.from(parent.children).find(el=>!nodeSet.has(el))||null;
+ for(const node of nodes)parent.insertBefore(node,reference);
+})();
+</script>
+<script id="whole-project-card-website-navigation">
+(()=>{const grid=document.getElementById('projectsGrid');if(!grid)return;const open=card=>{if(card?.dataset.website)window.location.assign(card.dataset.website)};grid.addEventListener('click',event=>{if(event.target.closest('a'))return;const card=event.target.closest('.project-card[data-website]');if(card)open(card)});grid.addEventListener('keydown',event=>{if(event.target.matches('.project-card[data-website]')&&(event.key==='Enter'||event.key===' ')){event.preventDefault();open(event.target)}})})();
+</script>
+
+<style id="adrian-layout-stability-repair">
+/* Layout repair: preserve the continuous horizontal panels while keeping every control and line of text in view. */
+.workspace{width:100%!important;margin:76px 0 0!important;height:calc(100dvh - 76px)!important;min-height:0!important;overflow:hidden!important}
+.workspace>.topline{position:relative!important;inset:auto!important;transform:none!important;width:100%!important;min-width:0!important;max-width:none!important;flex:0 0 58px!important;height:58px!important;margin:0!important;padding:0 clamp(16px,3vw,40px)!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:16px!important;box-sizing:border-box!important}
+.workspace>.topline>.crumb{position:absolute!important;left:clamp(16px,3vw,40px)!important}
+.workspace>.topline>.top-actions{margin-inline:auto!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;min-width:0!important;max-width:100%!important}
+.page{height:auto!important;min-height:0!important;flex:1 1 auto!important;width:100%!important;max-width:none!important;min-width:0!important;padding:8px 0 18px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:none!important;scroll-behavior:auto!important;align-items:stretch!important}
+.page>.hero,.page>.section,.page>.projects-wrap{box-sizing:border-box!important;min-height:100%!important;height:100%!important;max-height:none!important;overflow-x:hidden!important;overflow-y:auto!important;padding-top:clamp(24px,4vh,48px)!important;padding-bottom:112px!important;scroll-snap-align:none!important;scroll-snap-stop:normal!important;overscroll-behavior:contain!important}
+.page>.hero{padding-top:clamp(24px,4vh,48px)!important}
+.page>.section#appearance{display:none!important}
+body>footer.footer{position:fixed!important;left:50%!important;right:auto!important;bottom:10px!important;transform:translateX(-50%)!important;width:min(1160px,calc(100vw - 32px))!important;max-width:none!important;min-width:0!important;height:auto!important;min-height:48px!important;max-height:none!important;margin:0!important;padding:10px 18px!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:6px 22px!important;text-align:center!important;box-sizing:border-box!important;z-index:120!important;line-height:1.45!important}
+body>footer.footer .footer-about{display:none!important}
+@media(max-width:700px){.sidebar{height:96px!important;min-height:96px!important}.workspace{margin-top:96px!important;height:calc(100dvh - 96px)!important}.workspace>.topline{flex-basis:auto!important;height:auto!important;min-height:62px!important;padding:7px 10px!important}.workspace>.topline>.crumb{display:none!important}.workspace>.topline>.top-actions{width:100%!important;gap:6px!important}.top-appearance{max-width:100%!important;flex-wrap:wrap!important}.page>.hero,.page>.section,.page>.projects-wrap{padding:26px 14px 112px!important}.page .download-grid,.page .project-grid,.page .social-grid,.page .about-grid,.page>.section#building .build-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:430px){.page .download-grid,.page .project-grid,.page .about-grid,.page>.section#building .build-grid{grid-template-columns:1fr!important}.page>.hero .hub-highlights{grid-template-columns:1fr!important}body>footer.footer{width:calc(100vw - 16px)!important;padding:8px!important;font-size:10px!important}}
+@media(prefers-reduced-motion:reduce){.page{scroll-behavior:auto!important}}
+
+</style>
+</body>
+</html>
+,'i').test(x.name)&&v&&versionOf(x.name)===v);return {exe:exact('exe')||newest(a.filter(x=>/\.exe$/i.test(x.name))),zip:exact('zip')||newest(a.filter(x=>/\.zip$/i.test(x.name)))}}
 function downloadCard(r,rel){const a=assets(rel),target=a.exe||a.zip;return '<a class="download-card" href="'+esc(target?.browser_download_url||rel?.html_url||r.html_url)+'" target="_blank" rel="noreferrer"><span class="mini-icon">↓</span><strong>'+esc(pretty(r.name))+'</strong><small>'+(a.exe?'Windows installer · '+esc(rel.tag_name):a.zip?'Portable ZIP · '+esc(rel.tag_name):rel?'Latest release · '+esc(rel.tag_name):'Open repository')+'</small><span>'+(target?'DOWNLOAD LATEST BUILD ↓':'VIEW RELEASES ↗')+'</span></a>'}
 function projectCard(r,rel){const a=assets(rel),links=[],s=site(r);if(a.exe)links.push('<a class="get" href="'+esc(a.exe.browser_download_url)+'" target="_blank" rel="noreferrer">WINDOWS SETUP ↓</a>');if(a.zip)links.push('<a class="get" href="'+esc(a.zip.browser_download_url)+'" target="_blank" rel="noreferrer">PORTABLE ZIP ↓</a>');if(s)links.push('<a href="'+esc(s)+'" target="_blank" rel="noreferrer">WEBSITE ↗</a>');links.push('<a href="'+esc(r.html_url)+'" target="_blank" rel="noreferrer">GITHUB ↗</a>');if(rel)links.push('<a href="'+esc(rel.html_url)+'" target="_blank" rel="noreferrer">RELEASE NOTES ↗</a>');return '<article class="project-card"'+(s?' data-website="'+esc(s)+'" role="link" tabindex="0" aria-label="Open '+esc(pretty(r.name))+' website"':'')+'><div class="project-top"><span class="project-mark">'+esc(pretty(r.name).slice(0,2).toUpperCase())+'</span><span class="tag">'+(rel?'LATEST '+esc(rel.tag_name):'PUBLIC REPOSITORY')+'</span></div><h3>'+esc(pretty(r.name))+'</h3><p>'+esc(r.description||'An independent project by Adrian Vale.')+'</p><div class="project-meta">'+(rel?'PUBLISHED '+new Date(rel.published_at||rel.created_at).toLocaleDateString():'SOURCE CODE & PROJECT LINKS')+'</div><div class="project-links">'+links.join('')+'</div></article>'}
 async function load(){const d=$('downloadsGrid'),p=$('projectsGrid'),u=$('releaseList');try{const repos=await json('https://api.github.com/users/'+OWNER+'/repos?type=owner&sort=updated&per_page=100');const list=repos.filter(r=>!r.fork&&!r.archived&&!EXCLUDED.has(r.name)&&r.visibility==='public');list.sort((a,b)=>{const ai=PINNED.indexOf(a.name.toLowerCase()),bi=PINNED.indexOf(b.name.toLowerCase());return (ai<0?999:ai)-(bi<0?999:bi)||new Date(b.pushed_at)-new Date(a.pushed_at)});if(!list.length)throw new Error('No public repositories found');const rels=await Promise.all(list.map(r=>latest(r.name)));d.innerHTML=list.map((r,i)=>downloadCard(r,rels[i])).join('');p.innerHTML=list.map((r,i)=>projectCard(r,rels[i])).join('');const recent=list.map((r,i)=>({r,rel:rels[i]})).filter(x=>x.rel).sort((a,b)=>new Date(b.rel.published_at||b.rel.created_at)-new Date(a.rel.published_at||a.rel.created_at)).slice(0,8);u.innerHTML=recent.length?recent.map(x=>'<div class="release"><div><strong>'+esc(pretty(x.r.name))+' — '+esc(x.rel.name||x.rel.tag_name)+'</strong><p>'+esc((x.rel.body||'Latest public release.').replace(/[#>*_]/g,' ').slice(0,130))+'</p></div><span class="tag">'+esc(x.rel.tag_name)+'</span><a href="'+esc(x.rel.html_url)+'" target="_blank" rel="noreferrer">VIEW RELEASE ↗</a></div>').join(''):'<div class="empty">No published releases yet.</div>'}catch(e){const m='GitHub data could not be loaded ('+esc(e.message)+'). Refresh the page to try again.';d.innerHTML='<div class="empty">'+m+'</div>';p.innerHTML='<div class="empty">'+m+'</div>';u.innerHTML='<div class="empty">'+m+'</div>'}}
