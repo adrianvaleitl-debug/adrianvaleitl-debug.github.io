@@ -567,6 +567,49 @@ body>footer.footer .footer-about{display:none!important}
 @media(prefers-reduced-motion:reduce){.page{scroll-behavior:auto!important}}
 
 </style>
+<style id="av-device-responsive-v1">
+/* Phone portrait: replace the desktop sidebar and horizontal panels with a compact mobile workspace. */
+@media (max-width:700px) and (pointer:coarse) and (orientation:portrait){
+ html,body{width:100%!important;min-height:100%!important;height:auto!important;overflow-x:hidden!important;overflow-y:auto!important}
+ body{padding:0 0 18px!important}
+ .sidebar{position:sticky!important;inset:0 0 auto 0!important;width:100%!important;height:auto!important;min-height:0!important;max-height:112px!important;padding:8px 10px!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:12px!important;overflow-x:auto!important;overflow-y:hidden!important;border-right:0!important;border-bottom:1px solid var(--line)!important}
+ .brand{flex:0 0 auto!important;padding:0 8px 0 0!important;border:0!important;gap:7px!important}
+ .brandmark{width:32px!important;height:32px!important}
+ .brand strong{font-size:11px!important}.brand small{font-size:8px!important}
+ .navlabel,.side-bottom{display:none!important}
+ .sidebar>.nav{display:flex!important;flex:0 0 auto!important;gap:5px!important;min-width:max-content!important}
+ .sidebar>.nav a{padding:8px 9px!important;font-size:10px!important;white-space:nowrap!important}
+ .workspace{width:100%!important;height:auto!important;min-height:0!important;margin:0!important;overflow:visible!important}
+ .workspace>.topline{position:sticky!important;top:0!important;left:auto!important;right:auto!important;transform:none!important;width:100%!important;height:auto!important;min-height:50px!important;flex:0 0 auto!important;padding:7px 10px!important;display:flex!important;flex-wrap:wrap!important;gap:7px!important}
+ .workspace>.topline>.crumb{display:none!important}
+ .workspace>.topline>.top-actions{width:100%!important;display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:6px!important}
+ .top-appearance{max-width:100%!important;flex-wrap:wrap!important}
+ .page{display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-width:none!important;padding:0 13px 20px!important;margin:0!important;overflow:visible!important}
+ .page>.hero,.page>.section,.page>.projects-wrap{display:block!important;position:relative!important;box-sizing:border-box!important;flex:none!important;width:100%!important;min-width:0!important;max-width:none!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;padding:28px 0!important;margin:0!important}
+ .page>.hero{padding-top:32px!important}
+ .page>.hero h1{font-size:clamp(38px,10vw,50px)!important;line-height:1.03!important}
+ .page .lead{font-size:15px!important;line-height:1.65!important}
+ .page .download-grid,.page .project-grid,.page .social-grid,.page .about-grid,.page>.section#building .build-grid{grid-template-columns:1fr!important;gap:9px!important}
+ .page .download-card,.page .project-card,.page .social-card,.page .about-card{min-height:0!important;padding:16px!important}
+ .page>.section .section-head,.page>.projects-wrap .section-head{display:block!important;margin-bottom:15px!important}
+ .page .section-head h2,.page .projects-wrap .section-head h2{font-size:clamp(27px,7vw,35px)!important}
+ .page>.footer{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:12px!important;width:100%!important;min-width:0!important;height:auto!important;min-height:0!important;max-height:none!important;padding:24px 0!important}
+ body>footer.footer{position:static!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;width:100%!important;min-width:0!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:18px 13px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+ .btn,.modebtn{min-height:42px!important}
+}
+@media (max-height:520px) and (pointer:coarse) and (orientation:landscape){
+ .sidebar{width:100%!important;height:58px!important;min-height:58px!important;max-height:58px!important;inset:0 0 auto 0!important;flex-direction:row!important;padding:5px 9px!important;overflow-x:auto!important}
+ .sidebar .brand{padding:0!important;border:0!important}
+ .sidebar .brandmark{width:30px!important;height:30px!important}
+ .sidebar .navlabel,.sidebar .side-bottom{display:none!important}
+ .sidebar>.nav{display:flex!important;min-width:max-content!important;gap:4px!important}
+ .sidebar>.nav a{padding:6px 8px!important;font-size:10px!important}
+ .workspace{margin:58px 0 0!important;width:100%!important;height:calc(100dvh - 58px)!important}
+ .workspace>.topline{height:42px!important;min-height:42px!important}
+ .page{height:calc(100dvh - 100px)!important}
+ .page>.hero,.page>.section,.page>.projects-wrap{padding-top:20px!important;padding-bottom:70px!important}
+}
+</style>
 </body>
 </html>
 ,'i').test(x.name)&&v&&versionOf(x.name)===v);return {exe:exact('exe')||newest(a.filter(x=>/\.exe$/i.test(x.name))),zip:exact('zip')||newest(a.filter(x=>/\.zip$/i.test(x.name)))}}
