@@ -322,8 +322,12 @@ html[data-mode="light"] .other-project-visit,
 html[data-mode="light"] .project-links a:hover,
 html[data-mode="light"] .release .tag{color:var(--accent-ink)!important}
 html[data-mode="light"] .btn.primary{background:var(--accent)!important;color:var(--accent-ink)!important}
+</style><style id="accessibility-skip-motion">
+.skip-link{position:fixed;z-index:10001;left:12px;top:-70px;padding:10px 14px;border:2px solid #79b5ff;border-radius:8px;background:#171b24;color:#fff;font:700 14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}
+.skip-link:focus{top:12px;outline:3px solid #2878d0;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head>
-<body>
+<body><a class="skip-link" href="#home">Skip to main content</a>
 <aside class="sidebar">
 <a class="brand" href="#home"><img class="brandmark" src="brand.svg" alt="Adrian Vale logo"><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
 <div class="navlabel">WORKSPACE</div>
