@@ -4,10 +4,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#171923"><link rel="icon" type="image/svg+xml" href="brand.svg"><meta name="description" content="Adrian Vale's central hub for software, downloads, project websites, releases and creator links.">
 <title>Adrian Vale — Central Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--sans:'Manrope',sans-serif;--mono:'DM Mono',monospace;--radius:17px}
+:root{--sans:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--radius:17px}
 html[data-accent="dollar"]{--accent:#e8c98f;--accent-soft:#f3e7d2;--accent-ink:#342719}
 html[data-accent="euro"]{--accent:#9ebce9;--accent-soft:#dce8f8;--accent-ink:#1e2c43}
 html[data-accent="pound"]{--accent:#c4afe7;--accent-soft:#e9e0f6;--accent-ink:#302443}
@@ -302,6 +300,10 @@ body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))
 @media(max-width:700px){.workspace{width:100vw!important;margin-left:0!important}.topline{justify-content:center!important}.topline>.crumb{display:none!important}body>footer.footer{left:8px!important;right:8px!important;width:auto!important}}
 </style>
 
+
+<style id="accessibility-focus-indicators">
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #2878d0!important;outline-offset:3px!important;box-shadow:0 0 0 2px #fff!important}
+</style>
 </head>
 <body>
 <aside class="sidebar">
