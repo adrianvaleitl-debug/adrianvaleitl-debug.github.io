@@ -304,7 +304,11 @@ body>footer.footer{left:calc(252px + (100vw - 252px - min(1160px,100vw - 276px))
 <style id="accessibility-focus-indicators">
 :where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #2878d0!important;outline-offset:3px!important;box-shadow:0 0 0 2px #fff!important}
 </style>
-</head>
+<style id="privacy-storage-banner-style">
+.av-storage-banner{position:fixed;z-index:9999;left:18px;right:18px;bottom:18px;max-width:760px;margin:auto;padding:17px 19px;background:#171b24;color:#f5f6fa;border:1px solid #626b7c;border-radius:16px;box-shadow:0 16px 50px #0009;font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.av-storage-banner p{margin:0 0 12px;color:inherit}.av-storage-banner strong{display:block;margin-bottom:4px}.av-storage-actions{display:flex;gap:9px;flex-wrap:wrap}.av-storage-actions button{min-height:40px;padding:9px 13px;border:1px solid #9ca8bc;border-radius:9px;background:#e9edf5;color:#1b2330;font:inherit;font-weight:700;cursor:pointer}.av-storage-actions button.secondary{background:transparent;color:#f5f6fa}.av-storage-actions button:focus-visible{outline:3px solid #79b5ff;outline-offset:3px}
+@media(max-width:600px){.av-storage-banner{left:10px;right:10px;bottom:10px;padding:14px}.av-storage-actions{display:grid;grid-template-columns:1fr}.av-storage-actions button{width:100%}}
+</style></head>
 <body>
 <aside class="sidebar">
 <a class="brand" href="#home"><img class="brandmark" src="brand.svg" alt="Adrian Vale logo"><span><strong>ADRIAN VALE</strong><small>PERSONAL HUB / 2026</small></span></a>
@@ -365,13 +369,21 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pretty=s=>String(s).replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 $('year').textContent=new Date().getFullYear();
-function setMode(mode){document.documentElement.dataset.mode=mode;const b=$('modeToggle');b.textContent=mode==='dark'?'LIGHT MODE':'DARK MODE';b.setAttribute('aria-label','Switch to '+(mode==='dark'?'light':'dark')+' mode');document.querySelector('meta[name="theme-color"]').content=mode==='dark'?'#171820':'#f5f3f0'}
-function setAccent(accent){const allowed=['dollar','euro','pound','yen','franc'];if(!allowed.includes(accent))accent='euro';document.documentElement.dataset.accent=accent;document.querySelectorAll('[data-accent-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.accentChoice===accent)));try{localStorage.setItem('adrian-accent',accent)}catch{}}
-let savedMode=null,savedAccent=null;try{savedMode=localStorage.getItem('adrian-mode');savedAccent=localStorage.getItem('adrian-accent')}catch{}
-setMode(savedMode==='light'||savedMode==='dark'?savedMode:(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
-setAccent(savedAccent||'euro');
-$('modeToggle').addEventListener('click',()=>{const next=document.documentElement.dataset.mode==='dark'?'light':'dark';setMode(next);try{localStorage.setItem('adrian-mode',next)}catch{}});
-document.querySelectorAll('[data-accent-choice]').forEach(b=>b.addEventListener('click',()=>setAccent(b.dataset.accentChoice)));
+const appearanceConsentKey='av-appearance-storage';
+let appearanceConsent=null,savedMode=null,savedAccent=null;
+try{appearanceConsent=localStorage.getItem(appearanceConsentKey)}catch{}
+if(appearanceConsent==='yes'){try{savedMode=localStorage.getItem('adrian-mode');savedAccent=localStorage.getItem('adrian-accent')}catch{}}
+function setMode(mode,save=true){document.documentElement.dataset.mode=mode;const b=$('modeToggle');b.textContent=mode==='dark'?'LIGHT MODE':'DARK MODE';b.setAttribute('aria-label','Switch to '+(mode==='dark'?'light':'dark')+' mode');document.querySelector('meta[name="theme-color"]').content=mode==='dark'?'#171820':'#f5f3f0';if(save&&appearanceConsent==='yes'){try{localStorage.setItem('adrian-mode',mode)}catch{}}}
+function setAccent(accent,save=true){const allowed=['dollar','euro','pound','yen','franc'];if(!allowed.includes(accent))accent='euro';document.documentElement.dataset.accent=accent;document.querySelectorAll('[data-accent-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.accentChoice===accent)));if(save&&appearanceConsent==='yes'){try{localStorage.setItem('adrian-accent',accent)}catch{}}}
+setMode(savedMode==='light'||savedMode==='dark'?savedMode:(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'),false);
+setAccent(savedAccent||'euro',false);
+$('modeToggle').addEventListener('click',()=>{const next=document.documentElement.dataset.mode==='dark'?'light':'dark';setMode(next,true)});
+document.querySelectorAll('[data-accent-choice]').forEach(b=>b.addEventListener('click',()=>setAccent(b.dataset.accentChoice,true)));
+if(appearanceConsent!=='yes'&&appearanceConsent!=='no'){
+ const banner=document.createElement('aside');banner.className='av-storage-banner';banner.setAttribute('role','region');banner.setAttribute('aria-label','Privacy and appearance storage choices');
+ banner.innerHTML='<strong>Privacy &amp; browser storage</strong><p>This site has no advertising or analytics cookies. If you allow it, we will save your chosen light/dark mode and accent colour in this browser. You can use the site without saving these preferences.</p><div class="av-storage-actions"><button type="button" data-choice="yes">Allow appearance storage</button><button type="button" class="secondary" data-choice="no">Don’t save preferences</button></div>';
+ document.body.append(banner);banner.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{appearanceConsent=button.dataset.choice;try{localStorage.setItem(appearanceConsentKey,appearanceConsent);if(appearanceConsent==='yes'){localStorage.setItem('adrian-mode',document.documentElement.dataset.mode||'dark');localStorage.setItem('adrian-accent',document.documentElement.dataset.accent||'euro')}}catch{}banner.remove()}));
+}
 async function json(url){const r=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});if(!r.ok)throw new Error('GitHub returned '+r.status);return r.json()}
 async function latest(name){try{return await json('https://api.github.com/repos/'+OWNER+'/'+encodeURIComponent(name)+'/releases/latest')}catch{return null}}
 function site(r){return r.homepage&&/^https?:\/\//i.test(r.homepage)?r.homepage:(r.has_pages?'https://'+OWNER+'.github.io/'+encodeURIComponent(r.name)+'/':null)}
