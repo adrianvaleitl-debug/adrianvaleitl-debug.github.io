@@ -43,4 +43,4 @@ GitHub Actions deploys the site to GitHub Pages on pushes to `main` and on manua
 
 ## Contributing
 
-Use [Issues](https://github.com/adrianvaleitl-debug/adrianvaleitl-debug.github.io/issues) to report bugs or suggest improvements.
+Use [Issues](https://github.com/adrianvaleitl-debug/Adrian-Vales-Projects/issues) to report bugs or suggest improvements.
