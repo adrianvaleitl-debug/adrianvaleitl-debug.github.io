@@ -132,15 +132,16 @@ html[data-site-theme="classy"] .gradient{background:linear-gradient(100deg,#EBEE
 html[data-site-theme] .positive,html[data-site-theme] .gain{color:#62c994!important}
 html[data-site-theme] .negative,html[data-site-theme] .loss{color:#ef8888!important}
 html[data-site-theme] #appearance{display:none!important}
-.av-theme-switcher{position:fixed;z-index:10020;left:16px;bottom:16px;display:flex;align-items:center;gap:5px;padding:6px;border:1px solid var(--av-theme-line);border-radius:999px;background:rgba(4,9,20,.9);box-shadow:0 12px 36px rgba(0,0,0,.38);backdrop-filter:blur(18px);font:11px/1.2 Inter,system-ui,sans-serif}
+.av-theme-switcher{position:fixed;z-index:10020;left:16px;bottom:16px;display:flex;align-items:center;gap:5px;padding:6px;border:1px solid var(--av-theme-line);border-radius:10px;background:rgba(4,9,20,.9);box-shadow:0 12px 36px rgba(0,0,0,.38);backdrop-filter:blur(18px);font:11px/1.2 Inter,system-ui,sans-serif}
 .av-theme-switcher span{padding:0 7px;color:#dce3ed;letter-spacing:.08em;text-transform:uppercase;font-size:9px}
-.av-theme-switcher button{appearance:none;border:1px solid transparent;border-radius:999px;padding:8px 12px;background:transparent;color:#eef2f7;font:600 11px Inter,system-ui,sans-serif;cursor:pointer}
+.av-theme-switcher button{appearance:none;border:1px solid transparent;border-radius:7px;padding:8px 12px;background:transparent;color:#eef2f7;font:600 11px Inter,system-ui,sans-serif;cursor:pointer}
 .av-theme-switcher button[aria-pressed=true]{background:#EBEEF2;color:#000412;border-color:#EBEEF2}
 html[data-site-theme="royal"] .av-theme-switcher{background:rgba(42,24,9,.94);border-color:rgba(241,217,168,.4)}
 html[data-site-theme="royal"] .av-theme-switcher button[aria-pressed=true]{background:#FFC34D;color:#2a1809;border-color:#FFC34D}
 .av-theme-switcher button:focus-visible{outline:3px solid var(--av-theme-accent2);outline-offset:3px}
 @media(max-width:600px){.av-theme-switcher{left:10px;bottom:58px;transform:scale(.94);transform-origin:bottom left}}
 </style>
+<style id="authenticity-accessibility-refinement">html{scroll-behavior:auto}.btn,.modebtn,.swatch,.project-links a,.release a{border-radius:8px}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}</style>
 </head>
 <body><a class="skip-link" href="#home">Skip to main content</a>
 <aside class="sidebar">
@@ -152,23 +153,23 @@ html[data-site-theme="royal"] .av-theme-switcher button[aria-pressed=true]{backg
 <a href="#links"><span class="navicon">↗</span>All links</a>
 <a href="#building"><span class="navicon">✦</span>What I build</a>
 </nav>
-<div class="side-bottom"><div class="side-card"><b>Something not working?</b><p>Open the relevant project on GitHub and report an issue.</p><a href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div><div class="side-foot">INDEPENDENTLY BUILT BY ADRIAN</div></div>
+<div class="side-bottom"><div class="side-card"><b>Something not working?</b><p>Open the relevant project on GitHub and report an issue.</p><a href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div><div class="side-foot">INDEPENDENT UK SOFTWARE DEVELOPMENT</div></div>
 </aside>
 <div class="workspace">
 <div class="topline"><span class="crumb">PERSONAL SPACE / OVERVIEW</span><div class="top-actions"></div></div>
 <main class="page" id="home" tabindex="0" aria-label="Portfolio sections. Use the left and right arrow keys to move between horizontal sections.">
-<section class="hero"><div><div class="eyebrow">WELCOME TO MY CORNER OF THE INTERNET</div><h1>My work.<br>My projects.<br><span>All here.</span></h1><p class="lead">A central place to explore what I'm building, find my apps and get to all my links.</p><div class="hero-actions"><a class="btn primary" href="#apps">EXPLORE MY APPS ↓</a><a class="btn" href="#links">FIND ME ONLINE ↗</a></div></div>
+<section class="hero"><div><div class="eyebrow">WELCOME TO MY CORNER OF THE INTERNET</div><h1>Independent software.<br>Made with care.<br><span>By Adrian Vale.</span></h1><p class="lead">Explore three free Windows desktop tools: Ledger for business records, Daymark for personal planning, and MarketView for market research. Read what each app does, check its release notes, and download it directly from its project repository.</p><div class="hero-actions"><a class="btn primary" href="#apps">EXPLORE MY APPS ↓</a><a class="btn" href="legal.html">PRIVACY &amp; TERMS</a></div></div>
 <aside class="hero-card"><div class="card-label">QUICK ACCESS / 001</div><h2>Where do you want to go?</h2><p>Jump straight to the main areas of the hub.</p><div class="quicklinks"><a href="#apps">My apps <span>↗</span></a><a href="#links">Socials & community <span>↗</span></a><a href="#building">What I build <span>↗</span></a></div></aside></section>
-<section class="section" id="apps"><div class="section-head"><div><div class="section-index">01 / SOFTWARE COLLECTION</div><h2>My apps.</h2></div><p class="section-note">All my software in one place. Choose an app below to get its latest Windows installer.</p></div><div class="project-grid apps-grid">
+<section class="section" id="apps"><div class="section-head"><div><div class="section-index">01 / SOFTWARE COLLECTION</div><h2>My apps.</h2></div><p class="section-note">Three free Windows apps. Each download links to its published GitHub release, where you can review the version and release notes.</p></div><div class="project-grid apps-grid">
 <article class="project-card"><div class="project-top"><img class="project-mark" src="https://raw.githubusercontent.com/adrianvaleitl-debug/SoloDesk/main/src-tauri/icons/app-icon.svg" alt="Ledger royal-gold app icon"><span class="tag">VERSION 3.9</span></div><h3>Ledger</h3><p>A considered business workspace for customers, invoices, expenses, recurring tasks, document links and analytics.</p><div class="project-links"><a class="get" href="https://github.com/adrianvaleitl-debug/SoloDesk/releases/download/V3.9/Ledger-Setup-3.9.exe">DOWNLOAD FOR WINDOWS ↓</a><a href="https://github.com/adrianvaleitl-debug/SoloDesk/releases/tag/V3.9">RELEASES ↗</a></div></article>
 <article class="project-card"><div class="project-top"><img class="project-mark" src="https://raw.githubusercontent.com/adrianvaleitl-debug/DayFlow/main/src-tauri/icons/app-icon.svg" alt="Daymark royal-gold app icon"><span class="tag">VERSION 2.2</span></div><h3>Daymark</h3><p>A calm personal planner for tasks, calendar, notes, habits, goals, focus sessions and weekly reviews.</p><div class="project-links"><a class="get" href="https://github.com/adrianvaleitl-debug/DayFlow/releases/download/v2.2/Daymark-Setup-2.2.exe">DOWNLOAD FOR WINDOWS ↓</a><a href="https://github.com/adrianvaleitl-debug/DayFlow/releases/tag/v2.2">RELEASES ↗</a></div></article>
 <article class="project-card"><div class="project-top"><img class="project-mark" src="https://raw.githubusercontent.com/adrianvaleitl-debug/market-insight/main/src-tauri/icons/app-icon.svg" alt="MarketView royal-gold app icon"><span class="tag">VERSION 2.9</span></div><h3>MarketView</h3><p>A market research workspace with a 50-symbol watchlist, technical scanner, alerts, risk planner, journal and links to open symbols in your chosen trading platform. No trades are placed.</p><div class="project-links"><a class="get" href="https://github.com/adrianvaleitl-debug/market-insight/releases/download/V2.9/MarketView-Setup-2.9.exe">DOWNLOAD FOR WINDOWS ↓</a><a href="https://github.com/adrianvaleitl-debug/market-insight/releases/tag/V2.9">RELEASES ↗</a></div></article>
 </div></section>
-<section class="section" id="links"><div class="section-head"><div><div class="section-index">04 / FIND ME ONLINE</div><h2>All my links.</h2></div><p class="section-note">My main profiles, creator pages, project repositories and community links.</p></div><div class="social-grid">
+<section class="section" id="links"><div class="section-head"><div><div class="section-index">04 / FIND ME ONLINE</div><h2>All my links.</h2></div><p class="section-note">Find the project source, report a problem, or follow my creator updates.</p></div><div class="social-grid">
 <a class="social-card" href="https://github.com/adrianvaleitl-debug" target="_blank" rel="noreferrer"><strong>GitHub</strong><small>Code, repositories and issues</small><span>OPEN PROFILE ↗</span></a>
 <a class="social-card" href="https://www.youtube.com/@Adrianvaleitl" target="_blank" rel="noreferrer"><strong>YouTube</strong><small>Videos and creator content</small><span>VISIT CHANNEL ↗</span></a>
 <a class="social-card" href="https://www.tiktok.com/@adrianvaleitl" target="_blank" rel="noreferrer"><strong>TikTok</strong><small>Short videos and updates</small><span>VISIT PROFILE ↗</span></a>
-<a class="social-card" href="https://ko-fi.com/marketinsight" target="_blank" rel="noreferrer"><strong>Ko-fi</strong><small>Optional support for independent project development</small><span>SUPPORT HERE ↗</span></a>
+
 <a class="social-card" href="https://discord.gg/FqKBrtVZXj" target="_blank" rel="noreferrer"><strong>Discord</strong><small>Join the community</small><span>JOIN SERVER ↗</span></a>
 <a class="social-card" href="https://adrianvaleitl-debug.github.io/" target="_blank" rel="noreferrer"><strong>Portfolio</strong><small>This central hub</small><span>YOU ARE HERE</span></a>
 </div></section>
@@ -182,7 +183,7 @@ html[data-site-theme="royal"] .av-theme-switcher button[aria-pressed=true]{backg
 <article class="about-card"><h3>Room to experiment.</h3><p>Not every idea needs to become a huge platform. Small focused tools can still make a meaningful difference.</p></article></div><div class="section-meta"><span>Independent development</span><span>Practical software</span><span>Continuous improvement</span></div></section>
 
 
-<footer class="footer"><div class="footer-about"><strong>ABOUT ADRIAN</strong><p>Independent software maker from the UK. I turn useful ideas into programs and websites, then keep improving and sharing them.</p></div><span>© <span id="year"></span> ADRIAN VALE · BUILT INDEPENDENTLY</span><span><a href="https://github.com/adrianvaleitl-debug">GITHUB</a> · <a href="https://www.youtube.com/@Adrianvaleitl">YOUTUBE</a> · <a href="https://www.tiktok.com/@adrianvaleitl">TIKTOK</a> · <a href="https://ko-fi.com/marketinsight">KO-FI</a> · <a href="legal.html">PRIVACY &amp; LEGAL</a></span></footer>
+<footer class="footer"><div class="footer-about"><strong>ABOUT ADRIAN</strong><p>I am an independent UK software maker. I design and develop focused desktop tools, publish their releases, and maintain them as they evolve.</p></div><span>© <span id="year"></span> ADRIAN VALE · BUILT INDEPENDENTLY</span><span><a href="https://github.com/adrianvaleitl-debug">GITHUB</a> · <a href="https://www.youtube.com/@Adrianvaleitl">YOUTUBE</a> · <a href="https://www.tiktok.com/@adrianvaleitl">TIKTOK</a> · <a href="legal.html">PRIVACY &amp; LEGAL</a></span></footer>
 </main></div>
 <script>
 'use strict';
@@ -208,13 +209,13 @@ function showPrivacyChoices(){
  banner.className='av-storage-banner';
  banner.setAttribute('role','region');
  banner.setAttribute('aria-label','Privacy storage choices');
- banner.innerHTML='<strong>Privacy &amp; browser storage</strong><p>This website contains no advertising or analytics tags. We store your privacy choice only if you ask us to remember it. You can switch between the Classy and Royal themes at any time. <a href="legal.html" style="color:inherit;text-decoration:underline">Privacy details</a>.</p><div class="av-storage-actions"><button type="button" data-choice="yes">Remember my privacy choice</button><button type="button" class="secondary" data-choice="no">Do not save my choice</button></div>';
+ banner.innerHTML='<strong>Privacy &amp; browser storage</strong><p>This website does not use advertising or analytics tags. The Classy or Royal theme is saved on this device only if you choose to remember your preference. <a href="legal.html" style="color:inherit;text-decoration:underline">Privacy details</a>.</p><div class="av-storage-actions"><button type="button" data-choice="yes">Remember my privacy choice</button><button type="button" class="secondary" data-choice="no">Do not save my choice</button></div>';
  document.body.append(banner);
  banner.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{
   appearanceConsent=button.dataset.choice;
   try{
-   if(appearanceConsent==='yes')localStorage.setItem(appearanceConsentKey,'yes');
-   else localStorage.removeItem(appearanceConsentKey);
+   if(appearanceConsent==='yes'){localStorage.setItem(appearanceConsentKey,'yes');localStorage.setItem('av-site-theme',document.documentElement.dataset.siteTheme||'royal');}
+   else{localStorage.removeItem(appearanceConsentKey);localStorage.removeItem('av-site-theme');}
    for(let i=localStorage.length-1;i>=0;i--){const storedKey=localStorage.key(i);if(storedKey&&storedKey.startsWith('av-theme-'))localStorage.removeItem(storedKey)}
   }catch{}
   banner.remove();privacyReopen.hidden=false;
@@ -252,7 +253,7 @@ if(appearanceConsent!=='yes')showPrivacyChoices();
 
 <script id="av-two-theme-controller">
 (()=>{const key='av-site-theme';const allowed=['classy','royal'];let saved='royal';try{const v=localStorage.getItem(key);if(allowed.includes(v))saved=v}catch{}
-const root=document.documentElement;function apply(theme){const value=allowed.includes(theme)?theme:'royal';root.dataset.siteTheme=value;try{localStorage.setItem(key,value)}catch{}const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=value==='royal'?'#603E1E':'#000412';document.querySelectorAll('.av-theme-switcher button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===value)))}
+const root=document.documentElement;function apply(theme){const value=allowed.includes(theme)?theme:'royal';root.dataset.siteTheme=value;try{if(localStorage.getItem('av-appearance-storage')==='yes')localStorage.setItem(key,value);else localStorage.removeItem(key)}catch{}const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=value==='royal'?'#603E1E':'#000412';document.querySelectorAll('.av-theme-switcher button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===value)))}
 function mount(){if(document.querySelector('.av-theme-switcher'))return;const bar=document.createElement('div');bar.className='av-theme-switcher';bar.setAttribute('role','group');bar.setAttribute('aria-label','Choose website theme');bar.innerHTML='<span>Theme</span><button type="button" data-theme="classy">Classy</button><button type="button" data-theme="royal">Royal</button>';bar.addEventListener('click',e=>{const b=e.target.closest('button[data-theme]');if(b)apply(b.dataset.theme)});document.body.appendChild(bar);apply(root.dataset.siteTheme||saved)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();apply(saved)})();
 </script>
