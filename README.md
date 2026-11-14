@@ -1,6 +1,6 @@
 # Adrian Vale — The Hub
 
-**Live website:** https://adrianvaleitl-debug.github.io/
+**Live website:** https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/
 
 A central home for Adrian Vale's software, downloads, project websites, release notes and creator links.
 
@@ -18,9 +18,9 @@ A central home for Adrian Vale's software, downloads, project websites, release 
 
 | Project | Website | GitHub |
 |---|---|---|
-| Market Insight | https://adrianvaleitl-debug.github.io/market-insight/ | https://github.com/adrianvaleitl-debug/market-insight |
-| SoloDesk | https://adrianvaleitl-debug.github.io/SoloDesk/ | https://github.com/adrianvaleitl-debug/SoloDesk |
-| DayFlow | https://adrianvaleitl-debug.github.io/DayFlow/ | https://github.com/adrianvaleitl-debug/DayFlow |
+| MarketView | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/marketview/ | https://github.com/adrianvaleitl-debug/MarketView |
+| Ledger | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/Ledger/ | https://github.com/adrianvaleitl-debug/Ledger |
+| Daymark | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/Daymark/ | https://github.com/adrianvaleitl-debug/Daymark |
 
 The website reads the account's public repositories from the GitHub API. It excludes this portfolio repository, forks and archived repositories. For each repository, the homepage URL is preferred; if none is set and GitHub Pages is enabled, the website uses the repository's Pages URL. Latest releases are fetched from GitHub Releases.
 
