@@ -18,9 +18,9 @@ A central home for Adrian Vale's software, downloads, project websites, release 
 
 | Project | Website | GitHub |
 |---|---|---|
-| MarketView | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/marketview/ | https://github.com/adrianvaleitl-debug/MarketView |
-| Ledger | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/Ledger/ | https://github.com/adrianvaleitl-debug/Ledger |
-| Daymark | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/Daymark/ | https://github.com/adrianvaleitl-debug/Daymark |
+| MarketView | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/#apps | https://github.com/adrianvaleitl-debug/MarketView |
+| Ledger | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/#apps | https://github.com/adrianvaleitl-debug/Ledger |
+| Daymark | https://adrianvaleitl-debug.github.io/Adrian-Vales-Projects/#apps | https://github.com/adrianvaleitl-debug/Daymark |
 
 The website reads the account's public repositories from the GitHub API. It excludes this portfolio repository, forks and archived repositories. For each repository, the homepage URL is preferred; if none is set and GitHub Pages is enabled, the website uses the repository's Pages URL. Latest releases are fetched from GitHub Releases.
 
@@ -31,7 +31,7 @@ The website reads the account's public repositories from the GitHub API. It excl
 - TikTok: https://www.tiktok.com/@adrianvaleitl
 - Ko-fi: https://ko-fi.com/marketinsight
 
-**Discord:** the invite URL has not yet been supplied, so the website marks this link as pending rather than publishing an invented or invalid invite.
+**Discord:** https://discord.gg/3TQcf6DwvT
 
 ## Local preview
 
