@@ -35,17 +35,6 @@ html[data-mode="light"]{--bg:#f5f3f0;--side:#eeece8;--panel:#f7efdf4dfdfa;--pane
 .av-storage-reopen{position:fixed;z-index:9998;right:12px;bottom:12px;padding:7px 10px;border:1px solid #9b7950;border-radius:8px;background:#2b1d12;color:#f7efdf;font:11px system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;opacity:.92}.av-storage-reopen:focus-visible{outline:3px solid #e6c98f;outline-offset:3px}
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
 <style id="accessibility-focus-indicators">
 :where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #b98a48!important;outline-offset:3px!important;box-shadow:0 0 0 2px #f7efdf4df!important}
 </style>
@@ -187,10 +176,6 @@ html[data-site-theme="royal"] .av-theme-switcher button[aria-pressed=true]{backg
 </main></div>
 <script>
 'use strict';
-const OWNER='adrianvaleitl-debug',EXCLUDED=new Set(['Adrian-Vales-Projects','HomeBase']),PINNED=['marketview','ledger','daymark'];
-const $=id=>document.getElementById(id);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const pretty=s=>String(s).replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 $('year').textContent=new Date().getFullYear();
 const appearanceConsentKey='av-appearance-storage';
 let appearanceConsent=null;
@@ -225,31 +210,6 @@ privacyReopen.addEventListener('click',showPrivacyChoices);
 if(appearanceConsent!=='yes')showPrivacyChoices();
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script id="av-two-theme-controller">
 (()=>{const key='av-site-theme';const allowed=['classy','royal'];let saved='royal';try{const v=localStorage.getItem(key);if(allowed.includes(v))saved=v}catch{}
