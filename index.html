@@ -218,7 +218,7 @@ function mount(){if(document.querySelector('.av-theme-switcher'))return;const ba
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();apply(saved)})();
 </script>
 <script id="av-latest-release-sync">
-(()=> {
+(()=>{
  const cards=[...document.querySelectorAll('.project-card[data-release-repo]')];
  async function syncCard(card){
   const repo=card.dataset.releaseRepo;
@@ -227,7 +227,8 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
    if(!response.ok)return;
    const release=await response.json();
    if(release.draft||release.prerelease||!release.tag_name||!release.html_url)return;
-   const version=String(release.tag_name).replace(/^[vV]/,'');
+   const rawTag=String(release.tag_name);
+   const version=rawTag.charAt(0).toLowerCase()==='v'?rawTag.slice(1):rawTag;
    const versionNode=card.querySelector('[data-release-version]');
    const notesNode=card.querySelector('[data-release-notes]');
    const downloadNode=card.querySelector('[data-release-download]');
@@ -235,12 +236,16 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
    if(versionNode)versionNode.textContent='VERSION '+version;
    if(notesNode)notesNode.href=release.html_url;
    const body=String(release.body||'').trim();
-   const escaped=version.replace(/[.*+?^${}()|[\]\\]/g,'\\</body>');
-   if(summaryNode&&body&&new RegExp('\\b'+escaped+'\\b').test(body)){
-    summaryNode.textContent='What’s new: '+body.replace(/^#+\\s*/gm,'').replace(/\\s+/g,' ').slice(0,260);
+   if(summaryNode&&body&&body.includes(version)){
+    summaryNode.textContent='What’s new: '+body.split('\n').map(line=>line.trim()).filter(Boolean).join(' ').slice(0,260);
    }
    const assets=Array.isArray(release.assets)?release.assets:[];
-   const installer=assets.filter(asset=>asset.state==='uploaded'&&/\\.exe$/i.test(asset.name)&&asset.browser_download_url&&new URL(asset.browser_download_url).hostname==='github.com').sort((a,b)=>Number(/setup/i.test(b.name))-Number(/setup/i.test(a.name)))[0];
+   const installers=assets.filter(asset=>{
+    if(asset.state!=='uploaded'||!String(asset.name||'').toLowerCase().endsWith('.exe')||!asset.browser_download_url)return false;
+    try{return new URL(asset.browser_download_url).hostname==='github.com'}catch{return false}
+   });
+   installers.sort((a,b)=>Number(String(b.name).toLowerCase().includes('setup'))-Number(String(a.name).toLowerCase().includes('setup')));
+   const installer=installers[0];
    if(downloadNode){
     if(installer){downloadNode.href=installer.browser_download_url;downloadNode.textContent='DOWNLOAD FOR WINDOWS ↓';}
     else{downloadNode.href=release.html_url;downloadNode.textContent='VIEW RELEASE & DOWNLOADS ↗';}
